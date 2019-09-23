@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>   
+
+</body>
+</html>
+
+<script>
+    console.log('hey')
+    let h1 = document.createElement('h1');
+    let p = document.createElement('p');
+    let img = document.createElement('img');
+
+    h1.innerHTML = 'Coder Academy';
+    h1.color = 'red';
+    p.innerHTML = 'We learn Ruby and Javascript';
+    img.src = './caLogo.jpg';
+
+    let body = document.getElementsByTagName("body")[0]
+
+    body.appendChild(h1);
+    body.appendChild(p);
+    body.appendChild(img)
+</script>
