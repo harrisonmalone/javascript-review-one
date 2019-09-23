@@ -225,12 +225,17 @@ myFunc(10, (sum) => {
 // }
 
 // const harrison = Person("harrison")
+// console.log(harrison)
 
 // b. 
 // What does this function return?
 
+"This function return a 'Person' object"
+
 // c.
 // How do you call the sayHi() function?
+
+// harrison.sayHi()
 
 // 22. 
 
@@ -238,10 +243,32 @@ myFunc(10, (sum) => {
 // Using the code from above as a template, implement the same functionality using the class sugar syntax 
 // Note that you'll need to comment out the code from above for this to work
 
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+
+  sayHi() {
+    console.log('Hello')
+  }
+
+  addAgeAndHeight(age, height) {
+    this.age = age
+    this.height = height
+  }
+}
+
+const harrison = new Person('Harrison')
+console.log(harrison)
+harrison.sayHi()
+
 // b. 
 // Implement another instance method for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
+harrison.addAgeAndHeight(28, 175)
+
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
+console.log(harrison)
 
 // 23. 
 
