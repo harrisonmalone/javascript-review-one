@@ -20,6 +20,9 @@
 //     this.color = "red"
 // }
 
+// let square = new Square(50);
+// console.log(square);
+
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along. 
 
@@ -195,7 +198,7 @@
 // What is the difference between synchronous and asynchronous code? Name some ways that JS deals with the issue of asynchronous code. 
 // In a synchronous programming model, things happen one at a time. When you call a function that performs a long-running action, it returns only when the action has finished and it can return the result. This stops your program for the time the action takes.
 // An asynchronous model allows multiple things to happen at the same time. When you start an action, your program continues to run. When the action finishes, the program is informed and gets access to the result (for example, the data read from disk).
-// One approach to asynchronous programming is to make functions that perform a slow action take an extra argument, a callback function. The action is started, and when it finishes, the callback function is called with the result.
+// One approach to asynchronous programming is to make functions that perform a slow action take an extra argument, a callback function. The action is started, and when it finishes, the callback function is called with the result. The more succint way of doing this is to use a promise object
 
 
 // 18.
@@ -218,7 +221,7 @@
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
 // const southernField = { location: "upper", crop: "“sorghum”", watered: false }
-// var {location, crop, watered} = southernField
+// var {watered} = southernField
 // console.log(watered);
 
 
@@ -246,6 +249,15 @@
 // Explain in your own words how this code works. For example you could start with something like:
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+// 1) newNum is initialized in the global scope and assigned the number 1.
+// 2) myFunct function is defined and takes two parameters 'num' and a callback function 'callback'
+// 3) newNum is multuplied by the argument num and the result assigned back to the newNum variable
+// 4) newNum is passed into the callback function
+// 5) myFunc is called and each time it is called the result of the first operation is passed into
+// the callback as an argument in a nested pattern (callback hell). Finally the resulting sum is logged to
+// to the screen
+
+
 
 // 21.
 
@@ -267,9 +279,13 @@
 
 // b. 
 // What does this function return?
-
+// this function returns an object. The name key will contain the name that was passed in as an argument
+// the sayHi key will contain the sayHi function definition.
+ 
 // c.
 // How do you call the sayHi() function?
+// harrison.sayHi()
+
 
 // 22. 
 
@@ -277,18 +293,66 @@
 // Using the code from above as a template, implement the same functionality using the class sugar syntax 
 // Note that you'll need to comment out the code from above for this to work
 
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     sayHi() {
+//         console.log("hello");
+//     }
+
+//     addAgeAndHeight(age, height) {
+//         this.age = age;
+//         this.height = height;
+//     }
+// }
+
 // b. 
 // Implement another instance method for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
+// SEE ABOVE
+
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
+// let person = new Person("Harrison");
+// person.addAgeAndHeight(27, 187);
+// console.log(person);
 
 // 23. 
 
 // Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
 
+function waitBeforeSum(num1, num2) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(result = num1 + num2);
+        }, 4000)
+    })
+}
+
+// console.log(waitBeforeSum(5, 3));
+
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
+// since setTimout is an async function we need another async function to access its value
+async function accessSum(callBack, num1, num2) {
+    try {
+        result = await callBack(num1, num2);
+        if(result < 10) {
+            console.log(result)
+        } else {
+            let err = new Error("the sum was greater than 10");
+            throw err
+        }
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+accessSum(waitBeforeSum, 5, 2);
 
 // When we invoke waitBeforeSum we'll have two different options to avoid getting a pending promise. What are these 2 options?
+// we can use .then()
+// or we can make an async function
 
 // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
 
@@ -319,3 +383,11 @@
 
 // c.
 // Append the following elements to the body of the index.html using javascript, it should look like this https://dl.dropboxusercontent.com/s/qudmuyn8tpvyhtc/javascript_site.png
+
+// cd into dir
+// confirm which remote is connected (git remote -v)
+// make a new branch (git checkout -b thomas-smith-javascript-rev)
+// git add .
+// git commit
+// git push origin thomas-smith-javascript-rev
+// go to github and create a pull request
