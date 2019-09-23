@@ -4,35 +4,96 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+objectOne = {
+  number: 1,
+  string: "string",
+  array: ["value1", "value2"],
+  function: consoleLogFirstProperty = () => {
+    console.log(objectOne.number)
+  }
+};
+consoleLogFirstProperty();
+
+
+
 // 2.
 
 // Write a constructor function (to create objects) that takes one argument. It should use that argument to set the value of the first attribute of the object. There should be a second attribute that stores the value ‘red’. 
-
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along. 
+
+class objectCreator {
+  constructor(argument1) {
+    this.argumentOne = argument1
+    this.color = "red"
+  };
+};
+
+
 
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+const variableOne = "this string is saved as a global variable"
+
+const accessGlobalVariable = (() => {
+  console.log(variableOne + " (which this function has access to from within the function itself.)")
+});
+accessGlobalVariable()
+
+
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+
+const accessObject = (() => {
+  console.log(`First way: The value is "${objectOne.string}"`)
+  console.log('The second would be to write a function within the object itself and just all that function.')
+});
+accessObject()
+
+
 
 // 5.
 
 // What is JSON? Be clear but concise.
 
+const myAnswer5 = "JSON is the acronym for 'JavaScript Object Notation'. It stores JavaScript data structures/objects."
+
+
+
 // 6.
 
 // What is a callback?
 
+const myAnswer6 = "A 'Callback' is when one JS Function calls another JS Function after the first function has been executed."
+
+
+
 // 7.
 
-// Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+// Define a function that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+
+const myFunction = ((num1, num2) => {
+  return num1 + num2
+});
+
+const myCallbackFunction = ((myFunction) => {
+  console.log(myFunction)
+});
+
+myCallbackFunction(myFunction(10, 15))
+
+
 
 // 8.
 
 // Why do we use promises?
+
+const myAnswer8 = "The 'Promise' Object is used to check the status of an asynchronous operation for success, failure or pending."
+
+
 
 // 9.
 
