@@ -36,6 +36,9 @@ func("Melbourne");
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+obj.objString
+obj["objString"]
+
 // 5.
 
 // What is JSON? Be clear but concise.
