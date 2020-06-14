@@ -75,22 +75,51 @@
 
 // Why do we use promises?
 
+// To have the ability to make asynchronous functions
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolved, rejected
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// The rest syntax is for getting all the other variables out of an object, this allows you to input as many arguments as you would like to the function.
+
+// const func = (num1, num2, ...rest) => {
+//   console.log(rest);
+// }
+
+// func(1,2,3,4,5)
+
+// The spread syntax is the opposide of the rest syntax as it will expand an object into a bunch of single items.
+
+// let arr = [1,2,3,4,5]
+// console.log(...arr);
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+// const myFunc = (num1, num2, ...rest) => {
+//   let x = rest
+//   console.log(x.reduce((a, b) => a + b, 0));
+// }
+
+// myFunc(1,2,3,4,5)
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
+
+// A package manager is something that handles all the additional packages that could be required to run an app. Very similar to bundler in ruby
+
+// - Yarn
+// - npm
 
 // 13.
 
