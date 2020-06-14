@@ -8,8 +8,12 @@ dog = {
   age: 4,
   name: "Aria",
   favToys: ["tennis ball", "squeaky toy", "socks"],
-  noise() 
+  noise: function() {
+    return "Woof"
+  }
 }
+
+console.log(dog.noise());
 
 // 2.
 
