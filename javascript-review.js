@@ -48,13 +48,28 @@
 
 // What is JSON? Be clear but concise.
 
+// JSON is a way to store data in a lightweight format, it converts all data types into strings, and therefore saves a lot of data.
+
 // 6.
 
 // What is a callback function?
 
+// A function that is passed as an argument to another function
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+
+// let cb = (num1, num2) => {
+//   console.log(num1 + num2);
+// }
+
+// let func = (num1, num2, cb) => {
+//   cb(num1, num2)
+// }
+
+// func(1, 5, cb);
+
 
 // 8.
 
