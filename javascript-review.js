@@ -43,9 +43,13 @@ obj["objString"]
 
 // What is JSON? Be clear but concise.
 
+// JavaScript Object Notation is a way of storing data as a string, making it easy to send data from servers to webpages, but also able to hold complex data structures. It is also easy to convert between JSON and native javascript objects.
+
 // 6.
 
 // What is a callback function?
+
+// This is a function that takes another function as one of it's arguments
 
 // 7.
 
