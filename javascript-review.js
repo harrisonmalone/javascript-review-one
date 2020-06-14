@@ -55,6 +55,16 @@ obj["objString"]
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+const addingNumbers = (num1, num2, cb) => {
+  return cb(num1 + num2);
+}
+
+const logNum = (val) => {
+  console.log(val);
+}
+
+addingNumbers(5, 7, logNum);
+
 // 8.
 
 // Why do we use promises?
