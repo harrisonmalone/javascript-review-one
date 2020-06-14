@@ -32,6 +32,18 @@
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+
+
+// Property accessor
+
+// - Object.property
+
+// - Object['property']
+
+// Object deconstruction
+
+// - const [property] = object;
+
 // 5.
 
 // What is JSON? Be clear but concise.
