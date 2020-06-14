@@ -26,6 +26,12 @@ function Car(brand) {
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+let name = "Guy" // name is in global scope
+const func = (location) => {
+  console.log(name + " is in " + location); // and is accessed here within a function
+}
+func("Melbourne");
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
