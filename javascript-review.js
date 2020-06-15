@@ -76,6 +76,8 @@ addingNumbers(5, 7, logNum);
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve and reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
