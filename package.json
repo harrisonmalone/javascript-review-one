@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "name": "javascript-review-one",
+  "version": "1.0.0",
+  "main": "javascript-review.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tessssssssy/javascript-review-one.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tessssssssy/javascript-review-one/issues"
+  },
+  "homepage": "https://github.com/tessssssssy/javascript-review-one#readme",
+  "description": ""
+}

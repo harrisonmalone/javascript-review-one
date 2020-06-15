@@ -2,25 +2,49 @@
 
 // 1.
 
-// Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
+// Create an object that has four properties. One property should be set so that the value is a number, another property 
+// set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value 
+// of the first property.
 
 // 2.
 
-// Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
+// Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of 
+// the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to 
+// ‘red’. 
+function Car(brand) {
+  this.brand = brand;
+}
 
-// Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
+
+// Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came 
+// along in ES6. Don't use the sugar syntax for this question! 
+
 
 // 3.
 
-// Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+// Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this 
+// being used? (Define a constant in global scope and use that in a very simple function.)
+
+// yes
+const myVar = 'hello'
+const randomFunc = () => {
+  console.log(myVar)
+}
 
 // 4.
 
-// What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+// What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have 
+// been defined).
+
+// bracket notation key['value']
+// dot notation key.value
 
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// JSON stands for javascript object notation and is a lightweight format for transporting and storing data, usually used
+// when sending data from a server to a web page
 
 // 6.
 
@@ -28,7 +52,17 @@
 
 // 7.
 
-// Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+// Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them 
+// to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been 
+// passed through.
+
+const aFunc = (num1, num2, callback) => {
+  callback(num1 + num2)
+}
+
+aFunc(1, 2, function (sum) {
+  console.log(sum)
+})
 
 // 8.
 
@@ -39,23 +73,30 @@
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
-// 10.
+// resolve, reject
 
-// What's the different between the rest and spread syntax?
+// 10. What's the different between the rest and spread syntax?
+
+// spread operator spreads all the values of an array
+// rest operator allows you to pass a variable number of parameters and access them in an array
 
 // 11. 
 
-// Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
-
+// Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log 
+// out the value generated from the rest. 
+const myFunc = (...args) => {
+console.log(args)
+}
+myFunc(1,2,3)
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
-// 13.
+// 13. npm, yarn
 
 // What is a package.json? What is it similar to when comparing it to ruby?
 
-// 14.
+// 14. it's a file with all the dependencies, similar to gemfile
 
 // a. 
 // run the following command
@@ -64,18 +105,32 @@
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
-
+const readline = require('readline-sync');
+const input = readline.question('What is your Name? ');
+console.log(input);
 // 15.
 
 // a.
-// Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
+// Define a function called addNum with that takes two number arguments. In this function simply return the addition of 
+// these numbers. 
+
+const addNum = (num1, num2) => {
+  return num1 + num2
+}
 
 // b.
-// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
-
+// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct 
+// call the function that is passed as an argument, and pass the two number arguments to this function. 
+// numsPlusFunct will return an object where the first property has the value returned from that function call, 
+// and the second property is a string. 
+const numsPlusFunct = (num1, num2, callback) => {
+  let obj = {first: callback(num1, num2), second: 'a string'}
+  return obj
+}
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
 
+console.log(numsPlusFunct(1, 2, addNum));
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
@@ -85,6 +140,7 @@
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
@@ -92,25 +148,30 @@
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+const southernField = { location: 'upper', crop: 'sorghum', watered: false }
+const { location, crop, watered } = southernField;
+console.log(watered);
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc2 = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc2(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
+
+
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
 
@@ -124,16 +185,36 @@
   // code
 // end
 
-// Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
-
+// Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop 
+// should run, and the callback is the code that is executed each time the loop runs
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
-
 // You should see 5 outputs
+
+const times = (num, callback) => {
+  for (let i = 0; i < num; i++) {
+    callback();
+  }
+}
+
+times(5, function () {
+  console.log('hello')
+});
+// need to wrap inside an anonymous function otherwise it will only execute once then exit
 
 // 22. 
 
-// Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+// Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a 
+// prototype method sayHi() that simply outputs console.log("hello");
 
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  sayHi() {
+    console.log("hello")
+  }
+}
+// this is equivalent to creating a function constructor and defining the prototype method Person.prototype.sayHi
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
 // Create a new person and pass in name as an argument, console.log the person object
