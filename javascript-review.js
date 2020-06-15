@@ -149,6 +149,8 @@ console.log(numPlusfunct(1,2,addNum));
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
+var fs = require('fs');
+console.log(fs.readFileSync('./hello.txt','utf8'));
 
 // 17.
 
