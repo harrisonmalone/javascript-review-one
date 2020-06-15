@@ -4,31 +4,65 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+const obj = { property1: 23.6,
+            property2: 'a string',
+            property3: ['12', '23'],
+            property4: () => {
+              console.log(property1);
+            }
+}
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
 
+function Car(brand, colour = 'red') {
+  return car.brand = brand;
+}
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+// Yes we can
+
+const a = 3;
+const func = (num) => {
+  return a + num;
+}
+
+console.log(func(1)); // 4
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+
+console.log(obj.property1); // 23.6
+console.log(obj["property2"]); // 'a string'
 
 // 5.
 
 // What is JSON? Be clear but concise.
 
+// JSON - JavaScript Object Notation - is data format written in key-value pairs, both keys and values are strings; a JSON objet can consist of arrays and objects.
+
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function that is passed as an argument to another function.
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+
+const add = (num1, num2, cb) => {
+  const sum = num1 + num2;
+  cb(sum);
+}
+
+add(5, 7, console.log);
 
 // 8.
 
