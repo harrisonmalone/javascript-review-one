@@ -195,39 +195,31 @@ console.log(addNum(25,30))
 // numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
 function numPlusFunct(number1, number2, someFunc) {
-  someFunc(number1, number2)
+  const result = someFunc(number1, number2)
+  return {
+    result: result,
+    maths: "is great"
+  }
 }
 
-
-
-
-
-
-
+console.log(numPlusFunct(3,31, addNum));
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
-
-
-
-
-
-
-
-
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+const fs = require('fs');
 
-
-
-
-
-
-
+fs.readFile("./hw.txt", "utf-8", function(err, data) {
+  if (err) {
+    return console.log(err)
+  }
+  console.log(data)
+})
 
 
 // 17.
@@ -270,14 +262,14 @@ console.log(isIt);
 // a.
 // Uncomment the code below.
 
-let newNum = 1
+let newNum = 2
 
 const myFunc = (num, callback) => {
   newNum *= num
   callback(newNum)
 }
 
-myFunc(10, (sum) => {
+myFunc(25, (sum) => {
   console.log(sum)
 })
 
