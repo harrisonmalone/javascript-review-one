@@ -193,9 +193,24 @@
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// Fetch will request an api and give back all the information.
+
+// pokemonApi = fetch("pokemonapi.fakeurl.com")
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+// const southernField = { location: "upper", crop: "sorghum", watered: false }
+
+
+// let watered = southernField.watered 
+
+// const [location, crop, watered] = southernField
+
+// console.log(watered);
+
+// console.log(watered);
 
 // 20.
 
@@ -216,6 +231,10 @@
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
+// A variable named newNum is defined as 1, a function is declared which takes a number and a callback as arguments. It will then multiply the number by the new Num variable and set itself to this number. 
+
+// It will then initalize the callback function. 
+
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
 
 // 21.
@@ -233,10 +252,26 @@
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
+// let newNum = 1
+
+// const times = (num, cb) => {
+//   for (let i = 0; i < num; i++) {
+//       cb(5)
+//   }
+// }
+
+// const callback = (num) => {
+//   newNum *= num
+//   console.log(newNum);
+// }
+
+// times(5, callback)
 
 // 22. 
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+
+
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
@@ -248,13 +283,73 @@
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
 
+
+// class Person {
+//   constructor(name) {
+//     this.name = name
+//   }
+
+//   sayHi() {
+//     console.log("hello");
+//   }
+
+//   addAgeAndHeight(age, height) {
+//     this.age = age
+//     this.height = height
+//   }
+
+// }
+
+// let john = new Person('John')
+// john.addAgeAndHeight(25, 150)
+// console.log(john);
+
 // 23. 
 
-// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
+// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimconst asdf = async () => {
+
+   async function waitBeforeSum (num1, num2) {
+      num1 = num1 
+      num2 = num2
+    result = setTimeout((num1, num2) => {
+      return num1 + num2
+    }, 4000)
+
+    pop = await result
+    console.log('here'); 
+    console.log(pop);
+    return pop
+  }
+
+  const mathematical = async () => {
+    // console.log('now here');
+    result = await waitBeforeSum(1, 2) 
+    // console.log('step 3');
+    foo = await result 
+    console.log(foo);
+  }
+  result = await mathematical()
+  console.log(result);
+  console.log('???');
+  return result
+}eout.
+
+const waitBeforeSum = (num1, num2) => {
+ result = num1 + num2
+ console.log(result);
+ return result
+}
+
+setTimeout(waitBeforeSum, 4000, 1, 3)
+
+
+// console.log(result);
 
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
 // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
+// 1. .then
+// 2. .await
 
 // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
 
