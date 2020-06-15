@@ -200,6 +200,7 @@ myFunc(10, (sum) => {
 // Explain in your own words how this code works. For example you could start with something like:
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..."
+// The myFunc takes a  number and function as arguments it then takes the newNum value defined outside the function and multiplies it with the number argument and saves it to the newNum variable. It then uses the newNum as an argument for the callback function. The last line invokes the myFunc function and prints the sum which in this case is newNum.
 
 // 21.
 
