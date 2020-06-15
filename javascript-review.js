@@ -152,34 +152,42 @@
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
-const addNum = (num1, num2) => {
-  return (num1 + num2)
-};
+// const addNum = (num1, num2) => {
+//   return (num1 + num2)
+// };
 
 
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
-const numsPlusFunct = (num1, num2, func) => {
-  let x = func(num1, num2)
-  let property = {first:x, second:'string'}
-  console.log(property);
-  return property
-}
+// const numsPlusFunct = (num1, num2, func) => {
+//   let x = func(num1, num2)
+//   let property = {first:x, second:'string'}
+//   console.log(property);
+//   return property
+// }
 
-numsPlusFunct(1, 2, addNum)
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+// numsPlusFunct(1, 2, addNum)
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+// const fs = require('fs')
+
+// const data = fs.readFileSync('text.txt', 'utf8');
+// console.log(data);
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+// synchronous code is executed immediately on calling it, while asynchronous is placed in the call stack and then is executed after the call stack is empty. JS uses web API's to handle asynchronous code. Or Node uses c/c++ API's.  
 
 // 18.
 
