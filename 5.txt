@@ -1,0 +1,7 @@
+// 5.
+
+// What is JSON? Be clear but concise.
+
+JSON stands for javascript object notation
+
+JSON is a format for storing and exchanging data, it is based on objects and arrays. The data inside a JSON is in text fromat.

@@ -1,0 +1,11 @@
+// 12.
+
+// What is a javascript package manager? Name the 2 main package managers
+
+A JS package manager managers libraries of JS code that add extra functionality to JS
+
+two package managers:
+
+* npm
+
+* yarn
