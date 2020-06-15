@@ -4,40 +4,87 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+// const dog = {
+//   name: "henri",
+//   age: 5,
+//   activities: ["walking", "barking", "stealing food"],
+//   bark: myDog = () => {
+//     console.log(`my dog is called ${dog.name}`)
+//   },
+
+// }
+// myDog()
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
+
+// function Car (brand, color) {
+//   brand = this.brand,
+//   color = "red", 
+// }
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+// variables defined in global scope can be accessed within block scope. 
+// var hello = "hi. i am a student at CA "
+
+// const greeting = () => {
+//   console.log(hello)
+// }
+
+// greeting()
+
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// dot notation
+// console.log(dog.name)
+
+//bracket notation 
+// console.log(dog["age"])
+
 // 5.
 
 // What is JSON? Be clear but concise.
-
+//JSON is javascript object notation used to store data when being sent from a server to a webpage. 
 // 6.
 
 // What is a callback function?
+// A call back function is passing a function as an argument 
 
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+// myFunc = (num1,num2, cb) => {
+//   sum = num1 + num2 
+//   cb(sum) 
+// }
+
+// calculation = (sum) => {
+//   console.log(sum)
+// }
+
+// myFunc(1,2,calculation)
+
+
 // 8.
 
 // Why do we use promises?
+// Promises are used to handle asynchronous behaviour which could be a resolved value or error 
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
+
+// resolve and reject 
 
 // 10.
 
@@ -47,14 +94,16 @@
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
-
-// 13.
-
+// Javascript package managers:
+// NPM  & yarn 
+// These package managers help install external javascript libraries and dependencies.
+// 13. 
 // What is a package.json? What is it similar to when comparing it to ruby?
-
+// package.json contains information relating to the project's dependenacies. The equivalent of this in ruby would be the gemspec file. 
 // 14.
 
 // a. 
@@ -64,14 +113,34 @@
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+// const readline = require("readline-sync")
+
+// console.log("Hi, what’s your name?”)
+
+// const name = readline.question(">")
+// console.log(name)
+
+
 
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+const addNum = (num1, num2) => {
+  return num1 + num2
+}
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+
+const numPlusFunct = (number1, number2,oneFunc) => {
+    oneFunc (numbers1, numbers2) => { 
+      return numbers1 + numbers2
+    }
+  return console.log("hello")
+}
+
+numPlusFunct(1,2,oneFunc)
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
