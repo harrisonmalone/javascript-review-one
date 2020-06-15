@@ -19,27 +19,74 @@ console.log(dog.noise());
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
 
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+    this.color = "red"
+  }
+}
+
+let dreamCar = new Car("G Wagon");
+console.log(dreamCar);
+
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+// Yes you can access a variable if it is defined globally. If it was defined WITHIN the function then you could not access it outside of that function 
+
+const exampleVar = "Emma"
+
+function print() {
+  return exampleVar
+}
+
+console.log(print());
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+
+// . and also [] with ""
+
+console.log(dog.name);
+console.log(dog["favToys"]);
 
 // 5.
 
 // What is JSON? Be clear but concise.
 
+// JavaScript Object Notation which is a data format used for storing and sending data between  server and browser page 
+// It is text only and written with key/value pairs. JSON is data is formatted the same as JavaScript object properties 
+
 // 6.
 
 // What is a callback function?
 
+// A callback is a function passed into another function is an argument 
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+
+function adder(x, y, callback) {
+  let result = x + y;
+  return result;
+  callback()
+}
+
+function callback() {
+  return "This is the callback"
+}
+
+console.log(adder(3,6));
+// I DON'T KNOW HOW TO DO THIS ONE 
+
+
+
+
 
 // 8.
 
