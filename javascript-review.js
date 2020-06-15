@@ -251,15 +251,41 @@
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
 
+function Person(name){
+  this.name = name;
+}
+
+Person.prototype.sayHi = function(){
+  console.log("hello");
+};
+
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
+Person.prototype.addAgeAndHeight = function(age, height){
+  this.age = age
+  this.height = height
+};
+
+
 // Create a new person and pass in name as an argument, console.log the person object
+const lan = new Person('Lan');
+const rex = new Person('Rex');
 
 // Call the sayHi() method on the person
 
+
+lan.sayHi()
+rex.sayHi()
+
 // Call the addAgeAndHeight() method passing in the relevant arguments
 
+lan.addAgeAndHeight(28, 160)
+
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
+
+for(const property in lan){
+  console.log(`${property}: ${lan[property]}`);
+}
 
 // 23. 
 
