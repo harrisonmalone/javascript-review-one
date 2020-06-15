@@ -320,6 +320,31 @@ waitBeforeSum(7, 10)
 
 // To run the tests use => mocha <filename> from the command line
 
+fetch("https://restcountries.eu/rest/v2/all")
+  .then((response) => {return response.json()})
+  .then((response) => {getAustralia(response)})
+  .catch(err => console.log(err));
+
+const getAustralia = (object) => {
+  for(let i = 0; i < object.length; i++){
+    if(object[i]["name"] === 'Australia'){
+      console.log(object[i]["flag"]);
+    }
+  }
+}
+
+fetch("https://funtranslations.com/api/yoda", 
+{
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  method: "POST",
+  body: "Master Obiwan has lost a planet"
+})
+  .then((response) => {console.log(response)})
+  .catch(err => console.log(err));
+
 // 25.
 
 /*
