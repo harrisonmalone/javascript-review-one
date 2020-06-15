@@ -209,6 +209,8 @@ numsPlusFunct(3,4,addNum)
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
 
+
+
 // 20.
 
 // a.
