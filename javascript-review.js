@@ -4,9 +4,33 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+let theObject = {
+  firstProperty:1,
+  secondProperty:"Two",
+  thirdProperty:["element1","element2"],
+  forthProperty(){console.log(this.firstProperty)}
+}
+
+theObject.forthProperty()
+
+let anObject = new Object();
+anObject.firstProperty = 1;
+anObject.secondProperty = "Two";
+anObject.thirdProperty = ["element1","element2"];
+anObject.forthProperty = () => {console.log(anObject.firstProperty)}
+
+anObject.forthProperty()
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
+
+function Car(brand) {
+  this.brand = brand;
+  this.color = "red"
+}
+
+let echo = new Car("Toyota")
+console.log(echo.brand)
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
@@ -14,9 +38,16 @@
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+let a = "awesome"
+let showA = () => {console.log(a)}
+showA()
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+
+console.log(theObject.firstProperty)
+console.log(theObject['firstProperty'])
 
 // 5.
 
