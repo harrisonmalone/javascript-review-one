@@ -194,9 +194,6 @@ myFunc(10, (sum) => {
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
 
-A variable is declared called newNum with a value of 1, and stored into global memory.
-A constant variable is declared called myFunc
-
 // 21.
 
 // You might remember the .times method in ruby
@@ -209,18 +206,27 @@ A constant variable is declared called myFunc
 
 // Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
 
+function times(num, cb)
+
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
 
 // 22. 
 
-// Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+// Define a Person class, the constructor should take name as an argument and set the name to the this, 
+// the class should have a prototype method sayHi() that simply outputs console.log("hello")
 
 class Person {
   constructor(name) {
-  this.name = name
+  this.name = name;
   }
+
+  sayHi() {
+    console.log('hello')
+  }
+
+  addAgeAndHeight(age, height)
 }
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
