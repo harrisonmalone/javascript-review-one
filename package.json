@@ -1,0 +1,26 @@
+{
+  "name": "javascript-review-one",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Lanzhou-J/javascript-review-one.git"
+  },
+  "author": "Lanzhou Jiang <lzjiang99@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.6.0",
+    "readline-sync": "^1.4.10"
+  },
+  "bugs": {
+    "url": "https://github.com/Lanzhou-J/javascript-review-one/issues"
+  },
+  "homepage": "https://github.com/Lanzhou-J/javascript-review-one#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "description": ""
+}
