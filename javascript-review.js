@@ -4,11 +4,24 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+const student = {
+  name: 'Alivia',
+  age: 27,
+  subjects: ['js', 'ruby'],
+  func: function() {return 'Hello'}
+}
+console.log(student.name)
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
+
+function Car (make) {
+  this.make = make;
+  this.color = 'red';
+}
 
 // 3.
 
@@ -18,42 +31,75 @@
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// The dot notation and the bracket notation:
+// console.log(student.name)
+// console.log(student['name'])
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// Stands for Javascript Object Notation and is a syntax for storing and exchanging data.
 
 // 6.
 
 // What is a callback function?
 
+// A function that is passed as an argument and is executed after another function has finished executing.
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+function addNum(num1, num2, cb) {
+  const sum =  num1 + num2;
+  cb(sum);
+}
+
+addNum(4, 8, function(sum) {
+  console.log(sum);
+})
+
 // 8.
 
 // Why do we use promises?
+
+// To handle asynchronous code and to help solve 'callback hell'.
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// Resolve and Reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// A rest parameter is a collection of all remaining elements into an array, whereas the spread operator
+// is the opposite to rest because it deconstructs collected items such as arrays into single elements.
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+function myFunc(num1, ...num3) {
+  console.log(myFunc)
+}
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// Package managers help to keep track and manage dependencies that a project requires in order to function properly. Two main ones are npm and yarn.
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// In Node, package.json is used as a central repository of configuration for tools and is where npm and yarn store the names and versions of the package installed.
+// In Ruby, a Gemfile works a similar way because it contains a list of modules that a project depends on.
 
 // 14.
 
@@ -63,6 +109,9 @@
 
 // b. 
 // Install the package that allows us to get user input in node
+
+// npm install readline
+
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
 // 15.
@@ -70,11 +119,29 @@
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+function addNum(num1, num2) {
+  return num1 + num2;
+}
+const result = addNum(2, 4);
+console.log(result)
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+function numsPlusFunct(num1, num2, cb) {
+  const a = cb(num1, num2);
+  const b = {
+    firstProperty: a,
+    secondProperty: 'hello world',
+}
+return b
+}
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+const twoFuncsCombined = numsPlusFunct(2, 4, addNum)
+console.log(twoFuncsCombined)
 
 // 16.
 
@@ -85,29 +152,42 @@
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+// JS handles async code using promises. Synchronous code runs line by line, whilst async code allows code to be executed immediately without waiting. 
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// Fetch is a web api that returns a promise, and the way in which it relates to AJAX is that fetch is a function that makes an AJAX http requests easier. AJAX (Asynchronous Javascript and XML) being the terminology that encompasses all the different methods for making http requests from JS.
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+const southernField = { 
+  location: 'upper', 
+  crop: 'sorghum', 
+  watered: false 
+};
+
+const {watered} = southernField;
+console.log(watered)
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
@@ -126,13 +206,28 @@
 
 // Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
 
+function times(num, cb)
+
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
 
 // 22. 
 
-// Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+// Define a Person class, the constructor should take name as an argument and set the name to the this, 
+// the class should have a prototype method sayHi() that simply outputs console.log("hello")
+
+class Person {
+  constructor(name) {
+  this.name = name;
+  }
+
+  sayHi() {
+    console.log('hello')
+  }
+
+  addAgeAndHeight(age, height)
+}
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
