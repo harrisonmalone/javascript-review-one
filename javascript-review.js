@@ -125,6 +125,8 @@
 
 // What is a package.json? What is it similar to when comparing it to ruby?
 
+// It contains all the data about the packages installed, including dependencies. Similar to a gemfile in ruby.
+
 // 14.
 
 // a. 
@@ -135,13 +137,37 @@
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+// const readline = require('readline').createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+// readline.question('Who are you? ', name => {
+//   console.log(`Hey there ${name}!`);
+//   readline.close();
+// });
+
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+const addNum = (num1, num2) => {
+  return (num1 + num2)
+};
+
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+
+const numsPlusFunct = (num1, num2, func) => {
+  let x = func(num1, num2)
+  let property = {first:x, second:'string'}
+  console.log(property);
+  return property
+}
+
+numsPlusFunct(1, 2, addNum)
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
