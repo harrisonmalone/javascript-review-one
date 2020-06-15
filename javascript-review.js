@@ -92,26 +92,58 @@ console.log(adder(3,6));
 
 // Why do we use promises?
 
+// To handle asynchronous code which is code that is run not in order (hoisting or interval/timed) to avoid callback hell 
+
+
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// Resolve, Reject 
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+
+// Rest is used to assign variable values from arrays and objects. 
+let dogs = ["Aria", "Buddy", "Mia"];
+let [firstDog, secondDog] = dogs;
+
+console.log(firstDog);
+
+// Rest collects the remaining elements in an array whereas spread flattens out (or unpacks) the elements into individual elements. It is also used to copy an array 
+
+// The spread syntax is the opposite of rest 
+
+
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+function myFunc(...nums) {
+  return nums
+}
+
+console.log(myFunc(3,6,9));
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// npm 
+// yarn
+
+// install code written by others into our programs (Like gems in Ruby). Handles install and management of external libraries.. 
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// It is similar to Gemfile in Ruby and lists the program's dependencies
 
 // 14.
 
@@ -122,6 +154,8 @@ console.log(adder(3,6));
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+
+
 
 // 15.
 
