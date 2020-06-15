@@ -84,6 +84,10 @@ addNum(4, 8, function(sum) {
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+function myFunc(num1, ...num3) {
+  console.log(myFunc)
+}
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
@@ -112,8 +116,23 @@ addNum(4, 8, function(sum) {
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+function addNum(num1, num2) {
+  return num1 + num2;
+}
+const result = addNum(2, 4);
+console.log(result)
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+
+function numsPlusFunct(num1, num2, cb) {
+  const a = cb(num1, num2);
+  const b = {
+    firstProperty: a,
+    secondProperty: 'hello world',
+}
+return b
+}
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
