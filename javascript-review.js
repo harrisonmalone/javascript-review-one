@@ -349,6 +349,29 @@ console.log(me);
 
 // Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
 
+function waitBeforeSum(digit1, digit2) {
+  let sum = (digit1 + digit2)
+  return sum
+  setTimeout(function() {
+    console.log(sum);
+  }, 4000)
+}
+
+// setTimeout(function waitBeforeSum(digit1, digit2) {
+//   // let sum = (digit1 + digit2)
+//   console.log("Does this work?");
+// }, 4000);
+
+// This is rubbish:
+// waitBeforeSum(22, 3);
+
+// function waitBeforeSum(digit1, digit2) {
+//   let sum = setTimeout()
+// }
+
+// waitBeforeSum(22, 3);
+
+
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
 // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
