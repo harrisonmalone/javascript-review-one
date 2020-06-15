@@ -133,7 +133,7 @@ const addNum = (num1, num2) => {
 
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
-
+  
 const numPlusFunct = (num1, num2, cb) => {
   return {val1: cb(num1, num2), val2: "a string"}
 }
@@ -164,9 +164,20 @@ fs.readFile('hello.txt', 'utf8', function(err, data) {
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// fetch is a method used to call api's, this method returns a promise
+
+const fetch = require('node-fetch');
+
+fetch("https://api.chucknorris.io/jokes/random")
+  .then(response => response.json())
+  .then(data => console.log(data.value))
+  .catch(err => console.log(err));
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+const southernField = { location: "upper", crop: "sorghum", watered: false };
+let something = southernField.watered
 
 // 20.
 
