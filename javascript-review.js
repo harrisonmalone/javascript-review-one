@@ -313,29 +313,30 @@
 
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
-const waitBeforeSum = (num1, num2) => {
- result = num1 + num2
- return result
-}
+// const waitBeforeSum = (num1, num2) => {
+//  result = num1 + num2
+//  return result
+// }
 
-setTimeout(waitBeforeSum, 4000, 1, 3)
+// setTimeout(waitBeforeSum, 4000, 1, 3)
 
-// When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
-// 1. .then
-// 2. .await
+// // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
+// // 1. .then
+// // 2. .await
 
-// Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
+// // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
 
-const accessSum = async () => {
-  try {
-    result = await waitBeforeSum()
-    return result
-  } catch {
+// const accessSum = async () => {
+//   try {
+//     result = await waitBeforeSum(5, 4)
+//     if (result > 10) throw "The sum was greater than 10"
+//     if (result < 10) console.log(result)
+//   } catch(err) {
+//     console.log(err);
+//   }
+// }
 
-  }
-}
-
-accessSum()
+// accessSum()
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
@@ -348,10 +349,32 @@ accessSum()
 // Using the following API endpoint access the Australian flag svg link and console.log it
 // => https://restcountries.eu/rest/v2/all
 
+let fetch = require('node-fetch')
+
+// let data = fetch('https://restcountries.eu/rest/v2/all')
+
+// const logger = async () => {
+//   let result = await data
+//   console.log(result);
+// }
+
+// logger()
+
 // c.
 // Using the following API endpoint console.log the yoda text generated from this english phrase "Master Obiwan has lost a planet" 
 // Hint: you don't need to pay for a subscription 
 // => https://funtranslations.com/api/yoda
+
+// let data = fetch('https://api.funtranslations.com/translate/yoda')
+
+// const logger = async () => {
+//   let result = await data
+//   console.log(result);
+// }
+
+// logger()
+
+
 
 // 🎉🎉🎉🎉🎉🎉
 

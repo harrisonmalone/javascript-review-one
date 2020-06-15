@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Hexicans96/javascript-review-one/issues"
   },
-  "homepage": "https://github.com/Hexicans96/javascript-review-one#readme"
+  "homepage": "https://github.com/Hexicans96/javascript-review-one#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
