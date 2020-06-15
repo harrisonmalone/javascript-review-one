@@ -92,7 +92,7 @@ myFunc(1, 2, 3);
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
-// javascript package manager handles all libraries which can be added.
+// javascript package manager handles external libraries which can be added to our projects.
 // the two big package mangers are npm and yarn.
 
 // 13.
@@ -129,11 +129,21 @@ inquirer
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers.
 
+const addNum = (num1, num2) => {
+  return num1 + num2;
+}
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string.
-
+const numPlusfunct = (num1,num2,cb) => {
+  const object = {
+    first: cb(num1,num2),
+    second: 'a String'
+  }
+  return object;
+}
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument.
+console.log(numPlusfunct(1,2,addNum));
 
 // 16.
 
