@@ -306,52 +306,36 @@
 
 // 23. 
 
-// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimconst asdf = async () => {
+// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds
 
-   async function waitBeforeSum (num1, num2) {
-      num1 = num1 
-      num2 = num2
-    result = setTimeout((num1, num2) => {
-      return num1 + num2
-    }, 4000)
 
-    pop = await result
-    console.log('here'); 
-    console.log(pop);
-    return pop
-  }
 
-  const mathematical = async () => {
-    // console.log('now here');
-    result = await waitBeforeSum(1, 2) 
-    // console.log('step 3');
-    foo = await result 
-    console.log(foo);
-  }
-  result = await mathematical()
-  console.log(result);
-  console.log('???');
-  return result
-}eout.
+
+// What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
 const waitBeforeSum = (num1, num2) => {
  result = num1 + num2
- console.log(result);
  return result
 }
 
 setTimeout(waitBeforeSum, 4000, 1, 3)
-
-
-// console.log(result);
-
-// What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
 // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
 // 1. .then
 // 2. .await
 
 // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
+
+const accessSum = async () => {
+  try {
+    result = await waitBeforeSum()
+    return result
+  } catch {
+
+  }
+}
+
+accessSum()
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
