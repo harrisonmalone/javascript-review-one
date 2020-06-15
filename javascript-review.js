@@ -184,21 +184,23 @@ let something = southernField.watered
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+
+// newNum is initialized with 1, then a function is defined mulitplying the newNum variable by a number passed into the function and then that number is passed to a callback function. below this definition, the function is called with the number 10 and then the resultant number is logged using the callback function.
 
 // 21.
 
