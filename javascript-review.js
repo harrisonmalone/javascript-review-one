@@ -89,6 +89,13 @@ addingNumbers(5, 7, logNum);
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+const myFunc = (...args) => {
+  for(let i = 0; i < args.length; i++){
+    console.log(args[i]);
+  }
+}
+myFunc(2, 3, 6)
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
