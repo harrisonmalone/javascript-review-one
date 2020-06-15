@@ -197,9 +197,13 @@ numsPlusFunct(3,4,addNum)
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+// synchronous code is code that runs in sync, by this i mean runs in order. and other code cannot run while this is executing, also known as blocking code. Asynchronous code allows you to make api requests at the same time as other programs are running, also known as non-blocking code. one way Js handles async code is through the use of promises and using the resolve/reject syntax to handle the resolution of the the promise. 
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
+
+// fetch is a webapi that is used to 'fetch' data from an external source, takes one argument which is the URL and always returns a promise that the data can be accessed through chaining of .then, and through the use of .catch can catch any errors. 
 
 // 19.
 
