@@ -1,3 +1,5 @@
+const readline = require('readline-sync');
+
 // These questions are to test how you are progressing through the material, and to give you some feedback about where you might improve. Get through as many of these as you can. If you don’t get through all of them it’s ok - the test is designed to be difficult. If you can’t remember a bit of code, write the pseudo-code that represents how you would write your JS code.
 
 // 1.
@@ -150,20 +152,41 @@ myFunc('1','2','3','4','5','6','7')
 // run the following command
 // npm init -y
 
+
+
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+
+const nameQuestion = readline.question('What is your name?');
+
+console.log(nameQuestion);
 
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+const addNum = (num1, num2) => {
+  return num1 + num2 
+}
+
+console.log(addNum(3,4))
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+const numsPlusFunct = (num1, num2, callback) => {
+  callback(num1, num2) {
+    return callback + "string";
+  }
+}
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+numsPlusFunct(3,4,addNum)
+
 
 // 16.
 
