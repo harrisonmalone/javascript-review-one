@@ -100,11 +100,11 @@ someFun(2, 3, (arg) => {
 // 11.
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest.
-const myFunc = (num1, num2, ...rest) => {
-	console.log(rest);
-};
+// const myFunc = (num1, num2, ...rest) => {
+// 	console.log(rest);
+// };
 
-myFunc(1, 2, 3, 4, 5, 6);
+// myFunc(1, 2, 3, 4, 5, 6);
 
 // 12.
 
@@ -128,66 +128,105 @@ myFunc(1, 2, 3, 4, 5, 6);
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line
 var prompt = require("prompt");
-prompt.start()
-console.log("What's your name?")
+const { fstat } = require("fs");
+
+console.log("What's your name?");
+prompt.start();
 prompt.get("name", (err, result) => {
-  console.log(result.name);
-})
+	if (err) {
+		console.log("Oh no!");
+	}
+
+	console.log(result.name);
+	prompt.stop();
+});
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers.
 function addNum(num1, num2) {
-  return num1 + num2;
+	return num1 + num2;
 }
 
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string.
-function numsPlusFunct(num1, num2, cb) {
-  return cb(num1, num2);
+function numsPlusFunct(num1, num2, callBack) {
+	return callBack(num1, num2);
 }
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument.
-numsPlusFunct(5, 2, addNum);
+console.log(numsPlusFunct(1, 1, addNum));
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
+const fs = require("fs");
+const fileInput = "./input.txt";
+
+fs.readFile(fileInput, "utf8", (err, data) => {
+	if (err) {
+		console.log("Devistation!");
+	} else {
+		const printOut = data;
+		console.log(printOut);
+	}
+});
 
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code.
+// Synchronous code executes in the order which it has been called, each line will only be reached once the one before it has finished execution.
+// Asynchronous code will allow the code that proceeds to execute without awaiting the completion of the execution of the asynchronous lines of code.
+// Javascript handles asynchronous code by utilising API calls to the web browser or C++ code in node.js environments.
+// Commonly used handlers are AJAX, setTimeout, setInterval, and fetch. They effectively place the asynchronous callback function in the
+// callback queue, the event loop in the browser or node environment then awaits an empty call stack and places the first callback from
+// the callback queue into the call stack for execution.
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
+// 'fetch' is an implementation of an asynchronous HTTP request API which returns a Promise object.
+// i.e. fetch('www.someapiendpoint.com/getJSONResponse').then(response => { response.json() }).then(jsonData => { console.log(jsonData) })
 
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+const southernField = {
+  location: "upper",
+  crop: "sorghum",
+  watered: false
+}
+
+const newVariable = southernField.watered
+console.log(newVariable);
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
-// Explain in your own words how this code works. For example you could start with something like:
-
-// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..."
+// Explain in your own words how this code works.
+// 1. a variable by the name of newNum is declared with a value of 1
+// 2. a function is then defined that takes a number and a callback function as arguments.
+// It multiplies the newNum variable by the number argument and stores the result in newNum.
+// It then calls the callback function on the newNum variable.
+// 3. myFunc is then called with the number 10 and an anonymous function as arguments.
+// The anonymous function takes one argument and logs that variable to the console.
+// The result of this code together is a method which multiplies a number (10 in this case) by 1 and prints the result in the console.
 
 // 21.
 
@@ -200,25 +239,50 @@ numsPlusFunct(5, 2, addNum);
 // end
 
 // Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
+function times(num, callback) {
+  for(let index = 0; index < num; index++) {
+    callback();
+  }
+}
 
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
-
 // You should see 5 outputs
+times(5, () => {console.log("again!")})
 
 // 22.
-
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+class Person{
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Person.prototype.sayHi = () => {
+  console.log("hello");
+}
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
+Person.prototype.age = 0
+Person.prototype.height = 0
+
+Person.prototype.addAgeAndHeight = (age, height) => {
+  this._age = age;
+  this._height = height;
+}
 
 // Create a new person and pass in name as an argument, console.log the person object
+const phil = new Person("Phil");
+console.log(phil);
 
 // Call the sayHi() method on the person
+phil.sayHi();
 
 // Call the addAgeAndHeight() method passing in the relevant arguments
+phil.addAgeAndHeight(26, 175);
+console.log(phil.age);
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
-
+console.log(phil);
 // 23.
 
 // Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
