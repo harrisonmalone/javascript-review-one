@@ -1,8 +1,22 @@
 // These questions are to test how you are progressing through the material, and to give you some feedback about where you might improve. Get through as many of these as you can. If you don’t get through all of them it’s ok - the test is designed to be difficult. If you can’t remember a bit of code, write the pseudo-code that represents how you would write your JS code.
 
+import { readlinkSync } from "fs";
+
 // 1.
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
+
+let objWithProperties = {
+  number: 1,
+  string: 'string',
+  array: ['array', 2],
+  func: function() {
+    return objWithProperties.number;
+  }
+}
+
+// console.log(objWithProperties.func())
+
 
 // 2.
 
@@ -10,50 +24,130 @@
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
+function Car(brand) {
+  this.brand = brand;
+  this.color = 'red';
+}
+
+let carNew = new Car('rolls-royce');
+
+// console.log(carNew);
+
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+
+// Yes you can. However, we cannot access values created inside a function, outside of its declared scope. For example, if cat was declared in const, let and var, the variable will be restricted to the function scope. If there is the variable declared (except for var) within a loop inside a function, it will be restricted to the block scope. Var is a special case where even declared in the block scope, it is still accessible to the whole function scope. 
+
+const cat = 'neko-neko'
+
+let catSounds = () => {
+  console.log(cat)
+}
+
+// catSounds()
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// bracket notation and dot notation. 
+
+console.log(carNew['color']);
+console.log(carNew.color);
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// JavaScript Object Notation is an open source standard file format for transmitting structured data over the network connection. Primarily used to exchange data between server and web applications. The data is structured in attribute-value pairs and arrays data types. 
 
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function that is to be parsed into another function as an argument and be invoked/call back in the other function at a given time during execution.
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+function sumOf(num1, num2, callback) {
+  total = num1 + num2;
+  // console.log(total)
+  if (callback) {
+    return isItEven(total);
+  }
+
+  return total
+}
+
+function isItEven(total) {
+  if (total % 2 === 0) {
+    console.log(`${total} is an even number`)
+  }
+  else {
+    console.log(`${total} is an odd number`)
+  }
+
+}
+
+// sumOf(2, 3, isItEven);
+
+
 // 8.
 
 // Why do we use promises?
+
+// A promise is the eventual completion or failure of an asynchronous function and the resulting value from the function. We use promise to handle asynchronous behaviours in our code. For example, executing code that fetches data from a web api will take some time depending on the network connection and the server of the api. Promise helps to determine whether the fetching has finished or not, and if it was successful.
+
+// to handle async behaviour
+// fetch
+// .then
+// .catch - theres throw before this if we want to print an error.
+// .finally
+
+
+// async awaits
+// await === .then
+// implicitly return the promise object
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// They are the resolve and reject functions, also known as the Promise Resolver Function. These functions are the place where we put our logic in to determine whether the promise has finished or not, and if it was successful. Under the resolve(), this is where we write the code to indicate the promise is successfully processed whereas reject() is where we write the logic to indicate the promise is not successfully processed.
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// Rest takes in a set of arguments, condenses them into a new array, whereas spread syntax flattens the arguments by unpacking the values from an array. 
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+function myFunc(num1, num2, ...nums) {
+  console.log(nums);
+}
+
+// myFunc(1, 2, 3, 4, 5, 6, 7, 8); 
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// npm - Node Package Manager
+
+// yarn 
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// A file generated by initialising npm/yarn package manager and it stores the dependencies of the packages used in an application. This file is similar to the Gemfile in ruby. 
 
 // 14.
 
