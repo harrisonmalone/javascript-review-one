@@ -272,6 +272,24 @@ console.log(guy);
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
+const waitBeforeSum = (num1, num2) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let answer = num1 + num2;
+
+        if (isNaN(answer)) {
+            reject(new Error("Input needs to be a number"));
+        }
+
+        resolve(answer);
+    }, 4000);
+});
+}
+
+waitBeforeSum(7, 10)
+  .then((result) => {console.log(result)})
+  .catch((err) => {console.log(err)});
+
 // 24. 
 
 // a. 
