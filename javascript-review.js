@@ -100,6 +100,8 @@ myFunc(2, 3, 6)
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// Yarn and NPM
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
