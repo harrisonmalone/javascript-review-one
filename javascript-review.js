@@ -251,51 +251,75 @@
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
 
-function Person(name){
-  this.name = name;
-}
+// function Person(name){
+//   this.name = name;
+// }
 
-Person.prototype.sayHi = function(){
-  console.log("hello");
-};
+// Person.prototype.sayHi = function(){
+//   console.log("hello");
+// };
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
-Person.prototype.addAgeAndHeight = function(age, height){
-  this.age = age
-  this.height = height
-};
+// Person.prototype.addAgeAndHeight = function(age, height){
+//   this.age = age
+//   this.height = height
+// };
 
 
 // Create a new person and pass in name as an argument, console.log the person object
-const lan = new Person('Lan');
-const rex = new Person('Rex');
+// const lan = new Person('Lan');
+// const rex = new Person('Rex');
 
 // Call the sayHi() method on the person
 
 
-lan.sayHi()
-rex.sayHi()
+// lan.sayHi()
+// rex.sayHi()
 
 // Call the addAgeAndHeight() method passing in the relevant arguments
 
-lan.addAgeAndHeight(28, 160)
+// lan.addAgeAndHeight(28, 160)
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
 
-for(const property in lan){
-  console.log(`${property}: ${lan[property]}`);
-}
+// for(const property in lan){
+//   console.log(`${property}: ${lan[property]}`);
+// }
 
 // 23. 
 
 // Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
+function waitBeforeSum(num1, num2){
+  let sum = num1 + num2;
+  return sum
+}
+
 
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
+const myPromise = () => {
+  return new Promise ((resolve) => {
+    setTimeout(()=>{
+      resolve (waitBeforeSum(1,2))
+}, 4000);
+})
+}
+
+
+
 
 // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
 
+// We can use promises(.then, .catch) or use async and await syntax.
+
 // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
+
+const accessSum = async () => {
+  const sum = await myPromise()
+  console.log(sum);
+}
+
+accessSum()
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
