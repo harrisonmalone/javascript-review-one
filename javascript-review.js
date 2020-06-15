@@ -109,6 +109,9 @@ function myFunc(num1, ...num3) {
 
 // b. 
 // Install the package that allows us to get user input in node
+
+// npm install readline
+
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
 // 15.
@@ -137,6 +140,9 @@ return b
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
 
+const twoFuncsCombined = numsPlusFunct(2, 4, addNum)
+console.log(twoFuncsCombined)
+
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
@@ -158,26 +164,38 @@ return b
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
 
+const southernField = { 
+  location: 'upper', 
+  crop: 'sorghum', 
+  watered: false 
+};
+
+const {watered} = southernField;
+console.log(watered)
+
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+
+A variable is declared called newNum with a value of 1, and stored into global memory.
+A constant variable is declared called myFunc
 
 // 21.
 
@@ -198,6 +216,12 @@ return b
 // 22. 
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+
+class Person {
+  constructor(name) {
+  this.name = name
+  }
+}
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 

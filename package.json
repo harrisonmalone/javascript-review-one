@@ -1,0 +1,24 @@
+{
+  "name": "javascript-review-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "javascript-review.js",
+  "dependencies": {
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aubyn92/javascript-review-one.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aubyn92/javascript-review-one/issues"
+  },
+  "homepage": "https://github.com/Aubyn92/javascript-review-one#readme"
+}
