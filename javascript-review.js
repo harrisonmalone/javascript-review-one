@@ -118,6 +118,11 @@ myFunc(2, 3, 6)
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+const readline = require('readline-sync');
+let userName = readline.question('Enter a name ')
+console.log(userName)
+
+
 // 15.
 
 // a.
