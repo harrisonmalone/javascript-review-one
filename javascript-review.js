@@ -106,6 +106,8 @@ myFunc(2, 3, 6)
 
 // What is a package.json? What is it similar to when comparing it to ruby?
 
+// It is similar to the ruby gemfile, in this file it keeps track of all the dependencies of the project
+
 // 14.
 
 // a. 
