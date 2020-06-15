@@ -300,7 +300,7 @@ function waitBeforeSum(num1, num2){
 const myPromise = () => {
   return new Promise ((resolve) => {
     setTimeout(()=>{
-      resolve (waitBeforeSum(1,2))
+      resolve (waitBeforeSum(6,7))
 }, 4000);
 })
 }
@@ -317,11 +317,29 @@ const myPromise = () => {
 const accessSum = async () => {
   const sum = await myPromise()
   console.log(sum);
+
+  function CustomError(message){
+  this.message = message;
+  this.name = "ValueRangeError";
 }
 
-accessSum()
+  if(sum > 10){
+  throw new CustomError("the sum was greater than 10");
+  }
+  return sum
+};
+
+// accessSum()
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
+
+try {
+  accessSum()
+} catch(error){
+  console.log(error.message);
+}
+
+
 
 // 24. 
 
