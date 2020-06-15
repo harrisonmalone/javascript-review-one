@@ -1,8 +1,22 @@
+const readline = require('readline-sync');
+
 // These questions are to test how you are progressing through the material, and to give you some feedback about where you might improve. Get through as many of these as you can. If you don’t get through all of them it’s ok - the test is designed to be difficult. If you can’t remember a bit of code, write the pseudo-code that represents how you would write your JS code.
 
 // 1.
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
+
+myObject = {
+  number : 2,
+  string : 'This is a string',
+  myArray : [],
+  myFunc() {
+    return 'this is my function return'
+  }
+}
+
+console.log(myObject.number)
+
 
 // 2.
 
@@ -10,50 +24,127 @@
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
+function car(brand, color='red') {
+   console.log(`My ${brand} is ${color} and goes fast`)
+}
+
+car('Ferrari')
+
+
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+
+// Yes you can. 
+
+const name = "Thaddeus";
+
+const functionName = () => {
+  console.log(`My name is ${name}!`)
+}
+
+functionName()
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+myObj = {
+  firstName: 'Thaddeus',
+  lastName: 'Hoskin', 
+}
+
+console.log(myObj.firstName)
+console.log(myObj['firstName'])
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// Javascript object notation. Can manipulate JSON with the .parse and stringify methods
 
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function that uses a function as a argument and invokes it within that particular function. 
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+const myCallbackFunction = (num1, num2, callback) => {
+  myAnswer = num1 + num2;
+
+  if(callback) {
+    return callback(myAnswer);
+  }
+
+  return myAnswer;
+}
+
+function myFunction(input) {
+  console.log(input)
+}
+
+myCallbackFunction(2, 4, myFunction);
+
+
+
 // 8.
 
 // Why do we use promises?
+
+// promises are used for syntactical sugar for callbacks, to avoid callback hell. and to handle the resolution of asynchronous code.
+// to handle async behaviour
+// the eventual completion or failure of async behavior
+// fetch always returns a promise, its asynchronous because it has to fetch the data and the responses are not instant. So want code to run while this is happening. We can chain .then and.catch, and .finally, promise methods
+
+// async await
+// await === .then, await fot the resolve df a promise. 
+// .catch === .catch. 
+// has to be in an async function to use await keyword
+// async function myFunc() {
+// await
+// } 
+
+
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve and reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// they are the opposite of each other, rest collects items into an array spread 
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+const myFunc = (number1, number2, ...number3) => {
+  console.log(number3);
+}
+
+myFunc('1','2','3','4','5','6','7')
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
+// npm and yarn, allow us to install external libraries
+// get other js devs code and use it in our programs, 
+// use dependencies
+// need to run a yarn init or a npm init -y, this will give us package.json
 
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+// it is the gemfile in ruby. Holds all the dependencies that have been added to your project. 
 
 // 14.
 
@@ -61,20 +152,41 @@
 // run the following command
 // npm init -y
 
+
+
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+
+const nameQuestion = readline.question('What is your name?');
+
+console.log(nameQuestion);
 
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+const addNum = (num1, num2) => {
+  return num1 + num2 
+}
+
+console.log(addNum(3,4))
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+const numsPlusFunct = (num1, num2, callback) => {
+  callback(num1, num2) {
+    return callback + "string";
+  }
+}
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+numsPlusFunct(3,4,addNum)
+
 
 // 16.
 
@@ -85,13 +197,19 @@
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+// synchronous code is code that runs in sync, by this i mean runs in order. and other code cannot run while this is executing, also known as blocking code. Asynchronous code allows you to make api requests at the same time as other programs are running, also known as non-blocking code. one way Js handles async code is through the use of promises and using the resolve/reject syntax to handle the resolution of the the promise. 
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// fetch is a webapi that is used to 'fetch' data from an external source, takes one argument which is the URL and always returns a promise that the data can be accessed through chaining of .then, and through the use of .catch can catch any errors. 
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+
 
 // 20.
 
