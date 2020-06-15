@@ -82,7 +82,17 @@ function callback() {
 }
 
 console.log(adder(3,6));
+
+
+// ***************************************
+
+
 // I DON'T KNOW HOW TO DO THIS ONE 
+// NEED SOME HELP WITH CALLBACKS I JUST DON'T UNDERSTAND 
+
+
+
+// ***************************************
 
 
 
@@ -134,10 +144,10 @@ console.log(myFunc(3,6,9));
 
 // What is a javascript package manager? Name the 2 main package managers
 
-// npm 
-// yarn
+/* 1. npm 
+2. yarn
 
-// install code written by others into our programs (Like gems in Ruby). Handles install and management of external libraries.. 
+install code written by others into our programs (Like gems in Ruby). Handles install and management of external libraries.. */
 
 // 13.
 
@@ -153,37 +163,107 @@ console.log(myFunc(3,6,9));
 
 // b. 
 // Install the package that allows us to get user input in node
+
+// I ran: npm i readline-sync 
+// also did readline I don't know that that is?
+
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+/*
+const readlineSync = require('readline-sync');
 
+const yourDreamCar = readlineSync.question("What is your dream car :");
+
+console.log(yourDreamCar) */
 
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+function addNum(a,b) {
+  let total = a + b;
+  return total
+}
+
+console.log(addNum(25,30))
+
 // b.
-// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. 
+
+// STUCK: 
+// numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+
+function numPlusFunct(number1, number2, someFunc) {
+  someFunc(number1, number2)
+}
+
+
+
+
+
+
+
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+
+
+
+
+
+
+
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+
+
+
+
+
+
+
+
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+/* Synch code is code that is run in order - one thing is compelted and then program moves onto the next. Whereas asynch is code is when blocks are run not in order but the program is not held up. For example when timers or intervals are used.. while the timer is counting down, the next function of the code will run and then the program goes back to the functions once they are ready and everything else is compelte (callstack is clear)  */
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+/* 
+Fetch is a web api which returns a promise. You can use it to make XHR requests. 
+
+fetch("https://randomuser.me/api/")
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(err => console.log(err))
+
+*/ 
+
 // 19.
 
-// A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+// A JS object looks like this: 
+// Use destructuring to store the value of watered in a variable.
+
+const southernField = { 
+  location: "upper",
+  crop: "sorghum", 
+  watered: false }
+
+let isIt = southernField.watered
+
+console.log(isIt);
+
 
 // 20.
 
