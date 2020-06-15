@@ -315,15 +315,35 @@ times(5, () => {
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
 
+class Person {
+  constructor(name) {
+    this.name = name, 
+    this.sayHi = function sayHi() {
+      console.log("hello")
+    }
+  }
+}
+
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
+
+Person.prototype.addAgeandHeight = function(age, height) {
+  this.age = age,
+  this.height = height
+}
 
 // Create a new person and pass in name as an argument, console.log the person object
 
+let me = new Person("Emma");
+console.log(me)
+
 // Call the sayHi() method on the person
+me.sayHi();
 
 // Call the addAgeAndHeight() method passing in the relevant arguments
-
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
+
+me.addAgeandHeight(30, 168)
+console.log(me);
 
 // 23. 
 
