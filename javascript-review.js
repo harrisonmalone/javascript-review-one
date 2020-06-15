@@ -3,6 +3,14 @@
 // 1.
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
+let object = {
+  age:29, 
+  name:"Lan", 
+  favoriteColor:['blue','green'], 
+  function: function(){return 1 + 2}
+  } 
+
+  console.log(object.function()); 
 
 // 2.
 
@@ -10,29 +18,66 @@
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
+// function Car(brand){
+//   this.brand = brand;
+//   this.colour = 'red';
+// }
+
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+
+// Yes we can.
+
+// let var2 = 2
+// const var3 = 3
+
+// function myfunc(){
+//   console.log(var2);
+// }
+// myfunc()
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// Javascript provides 2 ways of accessing object properties. Dot notation(e.g. car.color) and bracket notation(e.g. car["color"])
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// What is JSON? Be clear but concise.
+
+// JSON is JavaScript Object Notation. It is a very common data/file format that is easy for human to read and for computer to parse. It uses text to store and transmit data objects consisting of attribute-value pairs and array data types.
 
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function passed to another function as an argument and can be used inside that function.
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+// function print(num){
+//   console.log(num);
+// }
+
+// function addAndPrint(num1, num2, cb){
+//   let sum = num1 + num2;
+//   cb(sum)
+// }
+
+// addAndPrint(1,2,print)
+
 // 8.
 
 // Why do we use promises?
+
+// A promise is an object that may produce a single value some time in the future. It can produce either a resolved value or a reason that it is not resolved(errors). The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+// fetch() will always return a promise.
 
 // 9.
 
