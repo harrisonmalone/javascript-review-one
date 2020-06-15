@@ -217,7 +217,7 @@
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
-// Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of the number 10 and a callback function. In the parameters, num represents the argument 10 and callback represents the function that's passed on the second argument.
+// Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments :number 10 and a callback function. In the parameters, num represents the argument 10 and callback represents the function passed on the second argument.
 
 // We then go into the function body of myFunc and newNum which is storing 1 is reassigned; the code executes the maths sum of 1 times 10 and stores the return value of 10 in the newNum variable.
 
@@ -238,6 +238,14 @@
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
+
+// function times(num,cb){
+//   for(i = 0; i<=num; i++){
+//     cb()
+//   }
+// }
+
+// times(5, ()=>{console.log("Hi!");})
 
 // 22. 
 
