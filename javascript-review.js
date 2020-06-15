@@ -141,12 +141,18 @@ const numPlusFunct = (num1, num2, cb) => {
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
 
-numPlusFunct(4, 16, addNum)
+numPlusFunct(4, 16, addNum);
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
+
+const fs = require('fs'); 
+fs.readFile('hello.txt', 'utf8', function(err, data) {
+  if (err) throw err;
+  console.log(data);
+});
 
 // 17.
 
