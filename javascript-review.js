@@ -4,9 +4,28 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+// let obj1 = {
+// number: "1",
+// name: "object",
+// arr: [1,2,3],
+// func: function(){
+//   console.log(obj1.number)
+// }
+// };
+// console.log(obj1.func)
+
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
+
+// function Car(make) {
+//   this.make = make
+//   this.color = 'red'
+// }
+
+// const holden = new Car('VW')
+
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
@@ -14,9 +33,23 @@
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+// const numbers = [1, 2, 3]
+// const myFunc = () => console.log(numbers)
+// myFunc()
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+// const obj = {
+//   num1: 1,
+//   num2: 2
+// }
+// const num1 = anotherObj.num1
+// console.log(num1)
+
+// const num2 = anotherObj["num2"]
+// console.log(num2)
+
 
 // 5.
 
@@ -29,19 +62,32 @@
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+// const numFunc = (num1, num2, callback) => {
+//   callback(num1 + num2)
+// }
+// numFunc(2, 2, (sum) => console.log(sum))
+
+
 
 // 8.
 
 // Why do we use promises?
+
+// promises handle asynchronous data most commonly used in setTimeout
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve, reject
+// .then, .catch
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+
 
 // 11. 
 
@@ -80,7 +126,7 @@
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
-
+ 
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
