@@ -110,19 +110,20 @@ myFunc(1, 2, 3);
 // b.
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line
-var inquirer = require("inquirer");
 
-let name = "";
-inquirer
-  .prompt({
-    type: "input",
-    name: "name",
-    message: "What is your name?",
-  })
-  .then((answers) => {
-    name = answers.name;
-    console.log(name);
-  });
+// var inquirer = require("inquirer");
+
+// let name = "";
+// inquirer
+//   .prompt({
+//     type: "input",
+//     name: "name",
+//     message: "What is your name?",
+//   })
+//   .then((answers) => {
+//     name = answers.name;
+//     console.log(name);
+//   });
 
 // 15.
 
@@ -155,10 +156,21 @@ console.log(fs.readFileSync('./hello.txt','utf8'));
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code.
+// Synchronous code is blocking code meaning each line of code is executed one after each other. Asynchronous is non blocking meaning that several pieces of code could be executed simultaneously.
+// Asynchronous code can be done in JS through the use of async and await syntax.
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
+// fetch is an api that allows us to make XHR which simplifies AJAX requests.
+// You might use fetch in order to request data from another API.
+
+// fetch will return a Promise object.
+const fetch = require('node-fetch');
+fetch("https://pokeapi.co/api/v2/pokemon/zapdos")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
 
 // 19.
 
