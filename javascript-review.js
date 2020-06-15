@@ -69,6 +69,8 @@ addingNumbers(5, 7, logNum);
 
 // Why do we use promises?
 
+// promises are used to handle multiple asynchronous operations without leading to callback hell. This allows for much more readable code and subsequenly easier to manage codebases 
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
