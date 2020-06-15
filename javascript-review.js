@@ -51,6 +51,15 @@ function Car (make) {
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+function addNum(num1, num2, cb) {
+  const sum =  num1 + num2;
+  cb(sum);
+}
+
+addNum(4, 8, function(sum) {
+  console.log(sum);
+})
+
 // 8.
 
 // Why do we use promises?
