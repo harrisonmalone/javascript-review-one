@@ -134,11 +134,11 @@ console.log(firstDog);
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
-function myFunc(...nums) {
+function myRestFunc(...nums) {
   return nums
 }
 
-console.log(myFunc(3,6,9));
+console.log(myRestFunc(3,6,9));
 
 // 12.
 
@@ -270,16 +270,16 @@ console.log(isIt);
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
