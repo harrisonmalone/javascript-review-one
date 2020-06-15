@@ -83,6 +83,7 @@ someFun(2, 3, (arg) => {console.log(arg); })
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters.
 
+// .then and .catch
 // 'resolve' and 'reject'
 
 // 10.
@@ -98,15 +99,23 @@ someFun(2, 3, (arg) => {console.log(arg); })
 // 11.
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest.
+const myFunc = (num1, num2, ...rest) => {
+  console.log(rest);
+}
 
+myFunc(1, 2, 3, 4, 5, 6)
 
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
+// The equivalent of what bundler does for ruby gems.
+// Manages which javascript libraries to use with your source code and handles installation of them and their dependencies.
+// Examples are npm and yarn.
 
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+// A list of all dependencies in your application code. Similar to the Gemfile in ruby implementations as managed with Bundler.
 
 // 14.
 
