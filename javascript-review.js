@@ -35,10 +35,10 @@ console.log(beetle);
 
 // Can you access variables defined outside of functions within the scope of functions in JS?
 // Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
-const globe = "This is global"
+const globe = "This is global";
 
 function globalCheck() {
-  console.log(globe);
+	console.log(globe);
 }
 globalCheck();
 
@@ -46,7 +46,7 @@ globalCheck();
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 console.log(myObj.arr);
-console.log(myObj['str']);
+console.log(myObj["str"]);
 
 // 5.
 
@@ -60,17 +60,18 @@ console.log(myObj['str']);
 // What is a callback function?
 // A callback function is a function passed as a parameter to another function.
 
-
 // 7.
 
 // Define a function with that takes two number arguments and a callback.
 // The function will add the two numbers and pass them to the callback as an argument.
 // Now call this function and in the callback simply console.log out the argument that has been passed through.
 const someFun = (num1, num2, cb) => {
-  let result = num1 + num2;
-  cb(result);
-}
-someFun(2, 3, (arg) => {console.log(arg); })
+	let result = num1 + num2;
+	cb(result);
+};
+someFun(2, 3, (arg) => {
+	console.log(arg);
+});
 
 // 8.
 
@@ -100,10 +101,10 @@ someFun(2, 3, (arg) => {console.log(arg); })
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest.
 const myFunc = (num1, num2, ...rest) => {
-  console.log(rest);
-}
+	console.log(rest);
+};
 
-myFunc(1, 2, 3, 4, 5, 6)
+myFunc(1, 2, 3, 4, 5, 6);
 
 // 12.
 
@@ -126,17 +127,29 @@ myFunc(1, 2, 3, 4, 5, 6)
 // b.
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line
-
+var prompt = require("prompt");
+prompt.start()
+console.log("What's your name?")
+prompt.get("name", (err, result) => {
+  console.log(result.name);
+})
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers.
+function addNum(num1, num2) {
+  return num1 + num2;
+}
 
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string.
+function numsPlusFunct(num1, num2, cb) {
+  return cb(num1, num2);
+}
 
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument.
+numsPlusFunct(5, 2, addNum);
 
 // 16.
 
@@ -355,6 +368,5 @@ _.findLastIndex(users, {
 //     assert.equal(result, 2)
 //   })
 // });
-
 
 // Open a pull request and submit to Harrison's repo.
