@@ -53,38 +53,67 @@ console.log(theObject['firstProperty'])
 
 // What is JSON? Be clear but concise.
 
+JavaScript Object Notation - A hash
+
 // 6.
 
 // What is a callback function?
+
+// It is a function which takes another function as an argument and will invoke that argument within the function
 
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+let myFunct = function(num1, num2, cb){
+  cb(num1,num2)
+}
+
+let callback = (a,b) => {
+  console.log(a,b)
+}
+
+myFunct(1,2,callback)
+
 // 8.
 
-// Why do we use promises?
+Promise objects are used to perform asynchronous functions.
+
+
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
-// Hint: They're in the new Promise callback function as parameters. 
+// Hint: They're in the new Promise callback function as parameters.
+
+resolve and reject
 
 // 10.
 
 // What's the different between the rest and spread syntax?
 
+rest is creating a new array while spread flattening the array
+
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
+
+let myFunc = (num1,num2,...num3) => {
+  console.log(...num3)
+}
+
+myFunc(1,2,3,4,5)
 
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+yarn and npm
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+the manage file which manages the dependecy of the project which is similar to the gemfile in ruby
 
 // 14.
 
@@ -92,9 +121,16 @@ console.log(theObject['firstProperty'])
 // run the following command
 // npm init -y
 
+This command will initial a npm project using the default setting instead of having to go through all questions
+
 // b. 
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+
+const readline = require('readline-sync');
+let getMenuOption = () => readline.questionInt('> ');
+console.log(getMenuOption)
+
 
 // 15.
 
