@@ -276,7 +276,15 @@ myFunc(25, (sum) => {
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
-// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+/* "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+
+Newnum is given a value, this variable/number used in the below calculations. 
+Then a function is declared myFunc which takes parameters of a number and also a callback. 
+This function is then invoked and within the body, multiplies newNum by the number passed in as an argument and reassigns it with the resulting value. 
+
+myFunc then passes in the result of that into a callback as an argument and invokes the callback. In the callback function body, where sum represents the newNum after the math calculation performed in above myFunc. And num argument represents 25 
+
+*/
 
 // 21.
 
@@ -290,8 +298,17 @@ myFunc(25, (sum) => {
 
 // Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
 
-// Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
+const times = (digit, cb) => {
+  for (let i = 0; i < digit; i++) {
+    cb()
+  }
+}
+  
+times(5, () => {
+  console.log("Testing 123..");
+})
 
+// Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 // You should see 5 outputs
 
 // 22. 
