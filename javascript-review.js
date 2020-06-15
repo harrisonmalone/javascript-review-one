@@ -1,59 +1,131 @@
 // These questions are to test how you are progressing through the material, and to give you some feedback about where you might improve. Get through as many of these as you can. If you don’t get through all of them it’s ok - the test is designed to be difficult. If you can’t remember a bit of code, write the pseudo-code that represents how you would write your JS code.
-
 // 1.
-
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
-
+// let obj = {num:1, string:"String", array:[1,2,3], function: () => {
+//   console.log(obj.num)
+// }}
+// console.log(obj);
 // 2.
-
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
-
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
+
+// class Car {
+//   constructor(brand) {
+//     this.colour = red
+//     this.brand = brand
+//   }
+// }
 
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
 
+// const x = 10
+
+// let func = () => {
+//   console.log(x);
+// }
+
+// func()
+
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+
+
+
+// Property accessor
+
+// - Object.property
+
+// - Object['property']
+
+// Object deconstruction
+
+// - const [property] = object;
 
 // 5.
 
 // What is JSON? Be clear but concise.
 
+// JSON is a way to store data in a lightweight format, it converts all data types into strings, and therefore saves a lot of data.
+
 // 6.
 
 // What is a callback function?
+
+// A function that is passed as an argument to another function
 
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+// let cb = (num1, num2) => {
+//   console.log(num1 + num2);
+// }
+
+// let func = (num1, num2, cb) => {
+//   cb(num1, num2)
+// }
+
+// func(1, 5, cb);
+
+
 // 8.
 
 // Why do we use promises?
+
+// To have the ability to make asynchronous functions
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolved, rejected
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// The rest syntax is for getting all the other variables out of an object, this allows you to input as many arguments as you would like to the function.
+
+// const func = (num1, num2, ...rest) => {
+//   console.log(rest);
+// }
+
+// func(1,2,3,4,5)
+
+// The spread syntax is the opposide of the rest syntax as it will expand an object into a bunch of single items.
+
+// let arr = [1,2,3,4,5]
+// console.log(...arr);
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+// const myFunc = (num1, num2, ...rest) => {
+//   let x = rest
+//   console.log(x.reduce((a, b) => a + b, 0));
+// }
+
+// myFunc(1,2,3,4,5)
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// A package manager is something that handles all the additional packages that could be required to run an app. Very similar to bundler in ruby
+
+// - Yarn
+// - npm
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// It contains all the data about the packages installed, including dependencies. Similar to a gemfile in ruby.
 
 // 14.
 
@@ -65,33 +137,80 @@
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+// const readline = require('readline').createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+// readline.question('Who are you? ', name => {
+//   console.log(`Hey there ${name}!`);
+//   readline.close();
+// });
+
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+// const addNum = (num1, num2) => {
+//   return (num1 + num2)
+// };
+
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+// const numsPlusFunct = (num1, num2, func) => {
+//   let x = func(num1, num2)
+//   let property = {first:x, second:'string'}
+//   console.log(property);
+//   return property
+// }
+
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+// numsPlusFunct(1, 2, addNum)
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+// const fs = require('fs')
+
+// const data = fs.readFileSync('text.txt', 'utf8');
+// console.log(data);
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+// synchronous code is executed immediately on calling it, while asynchronous is placed in the call stack and then is executed after the call stack is empty. JS uses web API's to handle asynchronous code. Or Node uses c/c++ API's.  
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// Fetch will request an api and give back all the information.
+
+// pokemonApi = fetch("pokemonapi.fakeurl.com")
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+// const southernField = { location: "upper", crop: "sorghum", watered: false }
+
+
+// let watered = southernField.watered 
+
+// const [location, crop, watered] = southernField
+
+// console.log(watered);
+
+// console.log(watered);
 
 // 20.
 
@@ -112,6 +231,10 @@
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
+// A variable named newNum is defined as 1, a function is declared which takes a number and a callback as arguments. It will then multiply the number by the new Num variable and set itself to this number. 
+
+// It will then initalize the callback function. 
+
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
 
 // 21.
@@ -129,10 +252,26 @@
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
+// let newNum = 1
+
+// const times = (num, cb) => {
+//   for (let i = 0; i < num; i++) {
+//       cb(5)
+//   }
+// }
+
+// const callback = (num) => {
+//   newNum *= num
+//   console.log(newNum);
+// }
+
+// times(5, callback)
 
 // 22. 
 
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+
+
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
 
@@ -144,15 +283,59 @@
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
 
+
+// class Person {
+//   constructor(name) {
+//     this.name = name
+//   }
+
+//   sayHi() {
+//     console.log("hello");
+//   }
+
+//   addAgeAndHeight(age, height) {
+//     this.age = age
+//     this.height = height
+//   }
+
+// }
+
+// let john = new Person('John')
+// john.addAgeAndHeight(25, 150)
+// console.log(john);
+
 // 23. 
 
-// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
+// Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds
+
+
+
 
 // What do we need to use to access the value in the setTimeout only after the 4 seconds? Write the code to achieve this.
 
+const waitBeforeSum = (num1, num2) => {
+ result = num1 + num2
+ return result
+}
+
+setTimeout(waitBeforeSum, 4000, 1, 3)
+
 // When we invoke waitBeforeSum we'll have two different methods we can chain to our promise to avoid getting a pending promise. What are these 2 methods?
+// 1. .then
+// 2. .await
 
 // Define another function named accessSum and make it an async function. Using the await keyword call waitBeforeSum inside of the accessSum function and store the resolve in a variable called result. console.log the result inside of the async function
+
+const accessSum = async () => {
+  try {
+    result = await waitBeforeSum()
+    return result
+  } catch {
+
+  }
+}
+
+accessSum()
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
