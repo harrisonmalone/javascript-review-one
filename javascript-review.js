@@ -186,12 +186,12 @@ let something = southernField.watered
 
 let newNum = 1
 
-const myFunc = (num, callback) => {
+const myFuncAha = (num, callback) => {
   newNum *= num
   callback(newNum)
 }
 
-myFunc(10, (sum) => {
+myFuncAha(10, (sum) => {
   console.log(sum)
 })
 
@@ -217,6 +217,14 @@ myFunc(10, (sum) => {
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
 
 // You should see 5 outputs
+
+const times = (num, cb) => {
+  for(let i = 0; i<num; i++){
+    cb();
+  }
+}
+
+times(5, () => {console.log("yes")});   
 
 // 22. 
 
