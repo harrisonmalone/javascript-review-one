@@ -31,13 +31,21 @@ function Car (make) {
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// The dot notation and the bracket notation:
+// console.log(student.name)
+// console.log(student['name'])
+
 // 5.
 
 // What is JSON? Be clear but concise.
 
+// Stands for Javascript Object Notation and is a syntax for storing and exchanging data.
+
 // 6.
 
 // What is a callback function?
+
+// A function that is passed as an argument and is executed after another function has finished executing.
 
 // 7.
 
@@ -47,14 +55,21 @@ function Car (make) {
 
 // Why do we use promises?
 
+// To handle asynchronous code and to help solve 'callback hell'.
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// Resolve and Reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// A rest parameter is a collection of all remaining elements into an array, whereas the spread operator
+// is the opposite to rest because it deconstructs collected items such as arrays into single elements.
 
 // 11. 
 
@@ -64,9 +79,14 @@ function Car (make) {
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// Package managers help to keep track and manage dependencies that a project requires in order to function properly. Two main ones are npm and yarn.
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// In Node, package.json is used as a central repository of configuration for tools and is where npm and yarn store the names and versions of the package installed.
+// In Ruby, a Gemfile works a similar way because it contains a list of modules that a project depends on.
 
 // 14.
 
@@ -98,9 +118,13 @@ function Car (make) {
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+// JS handles async code using promises. Synchronous code runs line by line, whilst async code allows code to be executed immediately without waiting. 
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
+
+// Fetch is a web api that returns a promise, and the way in which it relates to AJAX is that fetch is a function that makes an AJAX http requests easier. AJAX (Asynchronous Javascript and XML) being the terminology that encompasses all the different methods for making http requests from JS.
 
 // 19.
 
