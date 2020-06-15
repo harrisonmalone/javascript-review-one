@@ -35,27 +35,65 @@ car('Ferrari')
 
 // Yes you can. 
 
+const name = "Thaddeus";
 
+const functionName = () => {
+  console.log(`My name is ${name}!`)
+}
+
+functionName()
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+myObj = {
+  firstName: 'Thaddeus',
+  lastName: 'Hoskin', 
+}
+
+console.log(myObj.firstName)
+console.log(myObj['firstName'])
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// Javascript object notation. Can manipulate JSON with the .parse and stringify methods
 
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function that uses a function as a argument and invokes it within that particular function. 
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+const myCallbackFunction = (num1, num2, callback) => {
+  myAnswer = num1 + num2;
+
+  if(callback) {
+    return callback(myAnswer);
+  }
+
+  return myAnswer;
+}
+
+function myFunction(input) {
+  console.log(input)
+}
+
+myCallbackFunction(2, 4, myFunction);
+
+
+
 // 8.
 
 // Why do we use promises?
+
+// promises are used for syntactical sugar for callbacks, to avoid callback hell. and to handle the resolution of asynchronous code.
 
 // 9.
 
