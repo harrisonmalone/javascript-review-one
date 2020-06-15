@@ -4,56 +4,119 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+// let a = 1; //number
+// let b = "James"; //string
+// let oneArr = [12,34]; //array
+// function sub(x,y){
+//   return x-y;
+// } 
+// console.log(sub(5,3)); //function
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
 
 // Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
 
+// const Car = (brand) =>{
+//  let colour = 'red'
+//  return brand,colour;
+// }
+
+// console.log(Car("BMW"));
+
 // 3.
 
 // Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+
+// let name = "James";
+
+// function myName() {
+//   console.log(name);
+// }
+// console.log(myName());
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
 
+// console.log(person.name);
+// console.log(person["country"]);
+
 // 5.
 
 // What is JSON? Be clear but concise.
+
+// JavaScript object representation (JSON) was created as a format for human read-write and machine parsing and generation. It mimics the style of a JS object. Json strings can be parsed into JS arrays and objects. JSON => JS : JSON.parse(); JS => JSON : JSON.stringify().
 
 // 6.
 
 // What is a callback function?
 
+// A callback function is a function passed as an argument to another function and called internally.
+
 // 7.
 
 // Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
 
+// function add(x,y,cb) {
+//   result = x+y;
+//   if (cb){
+//     return cb(result);
+//   }
+//   return result;
+// }
+
+// function answer(sum) {
+//   console.log(`the sum is ${sum}.`);
+// }
+// add(3,5,answer);
+
 // 8.
 
 // Why do we use promises?
+
+// Because callback functions create callback's hell, the promise is created. Promises are usually used to handle asynchronous operations. To produce a single value in the future (a resolved value or error)
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// async/await
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// The Rest parameter collects all the remaining elements into an array.
+// The spread decompresses the collected elements (such as groups of Numbers) into a single element
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+// function restExample(x,y,...args) {
+//   console.log(x, y, args);
+// }
+
+// restExample(1, 2, 3, 4, 5);
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// get other js dev code and use it in our own programs
+// npm
+// yarn
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// This file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies.
+
+// gemfile
 
 // 14.
 
@@ -65,54 +128,103 @@
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+// const prompts = require('prompts'); //npm: prompts
+ 
+// (async () => {
+//   const response = await prompts({
+//     type: 'text',
+//     name: 'value',
+//     message: 'What is your name?'
+//   });
+ 
+//   console.log(response); 
+// })();
+
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+// function addNum(x,y) {
+//   return x+y;
+// }
+// console.log(addNum(2,3));
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+// function NumsPlusFunct(a,b,cb) {
+//   const result = cb(a,b)
+//   const object = {
+//     rAddNum: result,
+//     aString: "good work!"
+//   }
+// return object;
+// }
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+// const printResult = NumsPlusFunct(4,6,addNum);
+// console.log(printResult);
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+// const fs = require("fs");
+// const contents = fs.readFileSync("index.txt","utf8");
+// console.log(contents);
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+// synchronous blocking, one process at a time, runs step by step.
+// asynchronous non-nonblocking, can have multiple processes runs at same time. More efficient.
+
+// Callback Queue
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// fetch allows us to make http requests.
+// fetch is an AJAX technique. And allow us to do asynchronous programming.
+
+// const randomOne = fetch('https://api.chucknorris.io/jokes/random')
+
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+// const southernField = { location: "upper", crop: "sorghum", watered: false }
+
+// const { watered } = southernField
+// console.log(watered)
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
-// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of num and callback, where callback is a callback function, creates a parameter newNum that is the multiplication of the parameter num, and callback returns the result of newNum as a method. Thirdly,Call the myfunc function, passing in 10 as the value of num" 
 
 // 21.
 
