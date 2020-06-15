@@ -167,14 +167,18 @@ console.log(fs.readFileSync('./hello.txt','utf8'));
 
 // fetch will return a Promise object.
 const fetch = require('node-fetch');
-fetch("https://pokeapi.co/api/v2/pokemon/zapdos")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+// fetch("https://pokeapi.co/api/v2/pokemon/zapdos")
+//   .then(response => response.json())
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
 
 // 19.
 
-// A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+// A JS object looks like this: 
+const southernField = { location: "upper", crop: "sorghum", watered: false } 
+// Use destructuring to store the value of watered in a variable.
+const {location,crop,watered} = southernField;
+console.log(watered);
 
 // 20.
 
