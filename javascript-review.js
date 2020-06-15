@@ -1,3 +1,6 @@
+const readlineSync = require('readline-sync');
+const fs = require('fs');
+
 // These questions are to test how you are progressing through the material, and to give you some feedback about where you might improve. Get through as many of these as you can. If you don’t get through all of them it’s ok - the test is designed to be difficult. If you can’t remember a bit of code, write the pseudo-code that represents how you would write your JS code.
 
 // 1.
@@ -68,26 +71,47 @@ add(5, 7, console.log);
 
 // Why do we use promises?
 
+// We use promises to handle async behaviour. JavaScript is single threaded, but we can make it multi-threaded. When an asynchronous function runs, it creates a promise which is pending until other tasks are over, then it gets either fulfilled or rejected.
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve, reject. resolve is called when a promise is fulfilled (asynchronous function is successful), and reject is called when a promise is rejected (async function failes).
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// Rest syntax is used for destructuring arrays and objects. Spread syntax is used to expand number of arguments for function calls or elements in arrays.
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+const myFunc = (...numbers) => {
+  let result = 0;
+  for (let n of numbers) {
+    result += n;
+  }
+  return result;
+}
+
+console.log(myFunc(3, 4, 6)); //13
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// A package manager is a piece of software which helps with using dependencies in my code.
+// The 2 main package managers: npm and yarn
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// package.json is a file listing all dependencies, similar to a Gemfile in ruby.
 
 // 14.
 
@@ -99,54 +123,86 @@ add(5, 7, console.log);
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+const word = readlineSync.question("Type a random word: > ");
+console.log(word);
+
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+const addNum = (num1, num2) => {
+  return num1 + num2;
+}
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+const numsPlusFunct = (num1, num2, cb) => {
+  const result = cb(num1, num2);
+  return {
+    sum: result,
+    string: 'ERR_INVALID_CALLBACK'
+  }
+}
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+
+console.log(numsPlusFunct(1, 2, addNum));
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+fs.readFile('review.txt', (data) => {
+  console.log(data);
+});
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+// Synchronous code is executed line by line; asynchronous code allows a piece of code to wait and run later. JavaScript uses promises to handle asynchronous code.
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// fetch is a method that sends a request and returns a promise. It sends a GET request by default, but can send any request.
+// Example of usage: get API data:
+// const response = fetch(`https://api.spacexdata.com/v3/launches/${flightNum}`);
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+// const watered = southernField.watered;
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myNewFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myNewFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
 // "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+
+// 1. a new variable newNum is defined and assigned a value of 1.
+// 2. a new variable myNewFunc is defined and assigned a CS6 function. The function takes ...
 
 // 21.
 
