@@ -1,0 +1,6 @@
+// 6.
+
+// What is a callback function?
+
+A function passed to another function which is invoked inside of that function
+

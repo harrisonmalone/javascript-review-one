@@ -1,0 +1,7 @@
+// 10.
+
+// What's the different between the rest and spread syntax?and
+
+rest stores the rest of the values passed to a function that arent directly defined
+
+spread takes all values within an array 

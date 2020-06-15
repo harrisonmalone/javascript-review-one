@@ -1,0 +1,5 @@
+// 13.
+
+// What is a package.json? What is it similar to when comparing it to ruby?
+
+holds meta data pertaining to the dependencies of the program, similar to a gemfile
