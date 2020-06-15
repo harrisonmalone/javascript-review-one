@@ -4,6 +4,17 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+// var Georgia = {
+//   skillLevel: "98",
+//   name: "Georgia",
+//   skills: ["typing", "tripple threat", "very funny"],
+//   aFunction: function () {
+//     console.log(Georgia.skilllevel);
+
+//   }
+// }
+// console.log(Georgia)
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
@@ -34,6 +45,14 @@
 
 // Why do we use promises?
 
+// for async behaviour. use
+// fetch
+// .then
+// .catch
+// .finally
+// async/wait
+
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
@@ -46,15 +65,21 @@
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
+// function myFunc(...theArgs) {
+//  console.log(theArgs)
+// }
+// console.log(myFunc(4,7,3))
 
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+//npm and yarn. These both allow us to install other JS programs to utilize in our own programs. 
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
-
+// package.json can be said to be similar to a ruby gem file
 // 14.
 
 // a. 
