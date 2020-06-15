@@ -34,6 +34,8 @@
 
 // Why do we use promises?
 
+// hi
+
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
