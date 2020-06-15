@@ -3,14 +3,14 @@
 // 1.
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
-let object = {
-  age:29, 
-  name:"Lan", 
-  favoriteColor:['blue','green'], 
-  function: function(){return 1 + 2}
-  } 
+// let object = {
+//   age:29, 
+//   name:"Lan", 
+//   favoriteColor:['blue','green'], 
+//   function: function(){return 1 + 2}
+//   } 
 
-  console.log(object.function()); 
+//   console.log(object.function()); 
 
 // 2.
 
@@ -84,21 +84,35 @@ let object = {
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve and reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// Rest combines data into a new array but spread flattens all the items out.
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+// function myFunc(first, ...rest){
+//   console.log(rest);
+// }
+
+// myFunc(1,2,3)
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
 
+// a package manager is a software that lets javascript programmers to manage dependencies (external code). npm and yarn are 2 popular package managers.
+
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+
+// It is a file that lists all the packages the project depends on, it can make it easier for other developers to work on the same project. It is similar to Gemfile in ruby projects.
 
 // 14.
 
@@ -110,33 +124,79 @@ let object = {
 // Install the package that allows us to get user input in node
 // Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
 
+// const readline = require('readline-sync');
+// let userInput = readline.question('>>> ')
+// console.log(userInput);
+
 // 15.
 
 // a.
 // Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
 
+// function addNum(num1, num2){
+//   return num1 + num2
+// }
+
 // b.
 // Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
 
+// function numsPlusFunct(num1, num2, cb){
+//   let cbValue = cb(num1, num2)
+//   return {value: cbValue, string: 'Finished'}
+// }
+
+
+
+
 // c.
 // You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+// console.log(numsPlusFunct(1,2,addNum));
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
 
+// var fs = require('fs');
+// fs.readFile('a.txt', 'utf8', function(err, data) {
+//   if (err) throw err;
+//   console.log('Print: ' + 'a.txt');
+//   console.log(data)
+// });
+
 // 17.
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+
+// Synchronous code is also known as blocking code. It can only execute one thing at a time.
+// Asynchronous code, alsk known as non-blocking code, can keep running but the program is able to move on and other tasks can be executed before it finishes.
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
 
+// Fetch is a way to make XHR Requests, XHR means XMLHttpRequest. AJAX means Asynchronous JavaScript and XML. It can enable browser to run code without re-run the whole program (refresh the web page).It uses a combination of XMLHttpRequest(XHR) and Javascript, and Fetch is just one way of achieveing XHR Requests.
+
+// A fetch request would return a promise. 
+
+// fetch(`https://www.goodreads.com/search/index.xml?key=cfyfMOfygbaO23YVVBiA&q=${search}`).then((response) => {
+//   return response.text()
+// }).then((data) => {
+//   parseString(data, function (err, result) {
+//     let books = result.GoodreadsResponse.search[0].results[0].work;
+//     // console.log(util.inspect(books, false, null, true));
+//     books.forEach(function(value, index) {
+//       console.log(`${chalk.cyan("Title:")} ${value.best_book[0].title[0]}`)
+//       console.log(`${chalk.cyan("Average rating:")} ${value.average_rating[0]}`)
+//     });
+//   });
+// })
+
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+
+// let variable = southernField["watered"];
 
 // 20.
 
@@ -157,7 +217,11 @@ let object = {
 // b.
 // Explain in your own words how this code works. For example you could start with something like:
 
-// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+// Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of the number 10 and a callback function. In the parameters, num represents the argument 10 and callback represents the function that's passed on the second argument.
+
+// We then go into the function body of myFunc and newNum which is storing 1 is reassigned; the code executes the maths sum of 1 times 10 and stores the return value of 10 in the newNum variable.
+
+// Then the callback function is invoked and it receives one argument which is the newNum value. The value is equal to 10. We then go into the callback functions body and print to terminal the value of newNum which is 10.
 
 // 21.
 
