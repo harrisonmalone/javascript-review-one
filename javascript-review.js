@@ -4,6 +4,14 @@
 
 // Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
 
+const student = {
+  name: 'Alivia',
+  age: 27,
+  subjects: ['js', 'ruby'],
+  func: function() {return 'Hello'}
+}
+console.log(student.name)
+
 // 2.
 
 // Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
