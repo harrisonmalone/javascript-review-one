@@ -158,6 +158,8 @@ fs.readFile('hello.txt', 'utf8', function(err, data) {
 
 // What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
 
+// synchronous code happens as you see it in the text editor, whereas asynchronous code happens out of order, and it depends on when the code is finished executing. JS can handle this code by using promises.
+
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
