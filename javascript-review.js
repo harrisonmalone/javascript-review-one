@@ -82,6 +82,9 @@ addingNumbers(5, 7, logNum);
 
 // What's the different between the rest and spread syntax?
 
+// The spread syntax allows for an object to be copied no matter it's length
+// The rest syntax is useful for excluding items from being copied
+
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
