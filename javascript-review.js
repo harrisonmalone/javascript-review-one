@@ -94,27 +94,55 @@ myCallbackFunction(2, 4, myFunction);
 // Why do we use promises?
 
 // promises are used for syntactical sugar for callbacks, to avoid callback hell. and to handle the resolution of asynchronous code.
+// to handle async behaviour
+// the eventual completion or failure of async behavior
+// fetch always returns a promise, its asynchronous because it has to fetch the data and the responses are not instant. So want code to run while this is happening. We can chain .then and.catch, and .finally, promise methods
+
+// async await
+// await === .then, await fot the resolve df a promise. 
+// .catch === .catch. 
+// has to be in an async function to use await keyword
+// async function myFunc() {
+// await
+// } 
+
+
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
 // Hint: They're in the new Promise callback function as parameters. 
 
+// resolve and reject
+
 // 10.
 
 // What's the different between the rest and spread syntax?
+
+// they are the opposite of each other, rest collects items into an array spread 
 
 // 11. 
 
 // Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
 
+const myFunc = (number1, number2, ...number3) => {
+  console.log(number3);
+}
+
+myFunc('1','2','3','4','5','6','7')
+
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
+// npm and yarn, allow us to install external libraries
+// get other js devs code and use it in our programs, 
+// use dependencies
+// need to run a yarn init or a npm init -y, this will give us package.json
 
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+// it is the gemfile in ruby. Holds all the dependencies that have been added to your project. 
 
 // 14.
 
