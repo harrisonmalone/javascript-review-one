@@ -2,117 +2,231 @@
 
 // 1.
 
-// Create an object that has four properties. One property should be set so that the value is a number, another property set to a string, the third to an array, and the fourth to a function. This function should simply console.log the value of the first property.
+// Create an object that has four properties. One property should be set so that the value is a number,
+// another property set to a string, the third to an array, and the fourth to a function.
+// This function should simply console.log the value of the first property.
+const myObj = {
+	num: 1,
+	str: "Hello world!",
+	arr: ["Three", 4, 5.0],
+	printNum() {
+		console.log(this.num);
+	},
+};
+
+myObj.printNum();
 
 // 2.
 
-// Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object. There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’. 
+// Write a constructor function named Car that takes one argument. It should use that argument to set the brand attribute of the car object.
+// There should be a second attribute that stores the value for colour but this should be explicitly set to ‘red’.
+class Car {
+	constructor(make) {
+		this.make = make;
+		this.color = "red";
+	}
+}
 
-// Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question! 
+const beetle = new Car("VW");
+console.log(beetle);
+// Note that a constructor function is the old school syntax that was used in javascript before the sugar class syntax came along in ES6. Don't use the sugar syntax for this question!
 
 // 3.
 
-// Can you access variables defined outside of functions within the scope of functions in JS? Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+// Can you access variables defined outside of functions within the scope of functions in JS?
+// Show a simple example of this being used? (Define a constant in global scope and use that in a very simple function.)
+const globe = "This is global";
+
+function globalCheck() {
+	console.log(globe);
+}
+globalCheck();
 
 // 4.
 
 // What two ways can be used to access the properties of objects in JS? Give examples of both (although assume the objects have been defined).
+console.log(myObj.arr);
+console.log(myObj["str"]);
 
 // 5.
 
 // What is JSON? Be clear but concise.
+// JSON is JavaScript like Object like Notation, it is used as a markup language for web API communications.
+// It has become one of the most popular perhaps mostly thanks to its simple syntax and the prevalence of JavaScript on the web.
+// Format is like a JS object {"key0":"value0","key1":value1"}
 
 // 6.
 
 // What is a callback function?
+// A callback function is a function passed as a parameter to another function.
 
 // 7.
 
-// Define a function with that takes two number arguments and a callback. The function will add the two numbers and pass them to the callback as an argument. Now call this function and in the callback simply console.log out the argument that has been passed through.
+// Define a function with that takes two number arguments and a callback.
+// The function will add the two numbers and pass them to the callback as an argument.
+// Now call this function and in the callback simply console.log out the argument that has been passed through.
+const someFun = (num1, num2, cb) => {
+	let result = num1 + num2;
+	cb(result);
+};
+someFun(2, 3, (arg) => {
+	console.log(arg);
+});
 
 // 8.
 
 // Why do we use promises?
+// To allow our application to continue unblocked by asynchronous web service calls.
+// Also to prevent callback hell which can lead to code that looks confusing and can be hard to understand.
 
 // 9.
 
 // What are the two functions at our disposal if we are defining our own promise?
-// Hint: They're in the new Promise callback function as parameters. 
+// Hint: They're in the new Promise callback function as parameters.
+
+// .then and .catch
+// 'resolve' and 'reject'
 
 // 10.
 
 // What's the different between the rest and spread syntax?
+// The rest syntax will allow access to additional arguments passed to a function as an array:
+// function stuff(x, y, ...theRestIfAnyArgs);
+// stuff(1, 2, 3, 4, 5); => x = 1, y = 2, theRestIfAnyArgs = [3, 4, 5];
+// While the spread syntax allows us to parse an array of input parameters as separate variables.
+// const someArguments = [1, 2, 3, 4];
+// someFunction(...someArguments); => someFunction(1, 2, 3, 4);
 
-// 11. 
+// 11.
 
-// Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest. 
+// Define a function myFunc(), it should take 3 number arguments, use the rest syntax in the myFunc parameters and console.log out the value generated from the rest.
+// const myFunc = (num1, num2, ...rest) => {
+// 	console.log(rest);
+// };
+
+// myFunc(1, 2, 3, 4, 5, 6);
 
 // 12.
 
 // What is a javascript package manager? Name the 2 main package managers
+// The equivalent of what bundler does for ruby gems.
+// Manages which javascript libraries to use with your source code and handles installation of them and their dependencies.
+// Examples are npm and yarn.
 
 // 13.
 
 // What is a package.json? What is it similar to when comparing it to ruby?
+// A list of all dependencies in your application code. Similar to the Gemfile in ruby implementations as managed with Bundler.
 
 // 14.
 
-// a. 
+// a.
 // run the following command
 // npm init -y
 
-// b. 
+// b.
 // Install the package that allows us to get user input in node
-// Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line 
+// Store the result of the user input in a variable name then console.log the value of the variable on the subsequent line
+var prompt = require("prompt");
+const { fstat } = require("fs");
 
+console.log("What's your name?");
+prompt.start();
+prompt.get("name", (err, result) => {
+	if (err) {
+		console.log("Oh no!");
+	}
+
+	console.log(result.name);
+	prompt.stop();
+});
 // 15.
 
 // a.
-// Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers. 
+// Define a function called addNum with that takes two number arguments. In this function simply return the addition of these numbers.
+function addNum(num1, num2) {
+	return num1 + num2;
+}
 
 // b.
-// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string. 
+// Write a second function called numsPlusFunct that takes three arguments, two numbers and a function. Inside numsPlusFunct call the function that is passed as an argument, and pass the two number arguments to this function. numsPlusFunct will return an object where the first property has the value returned from that function call, and the second property is a string.
+function numsPlusFunct(num1, num2, callBack) {
+	return callBack(num1, num2);
+}
 
 // c.
-// You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument. 
+// You have now made two functions. Call the numsPlusFunct and pass addNum as the appropriate argument.
+console.log(numsPlusFunct(1, 1, addNum));
 
 // 16.
 
 // Define a .txt file and put this text into it => "hello world"
 // Using the fs module in node read this text from the file into this program and console.log it
+const fs = require("fs");
+const fileInput = "./input.txt";
+
+fs.readFile(fileInput, "utf8", (err, data) => {
+	if (err) {
+		console.log("Devistation!");
+	} else {
+		const printOut = data;
+		console.log(printOut);
+	}
+});
 
 // 17.
 
-// What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code. 
+// What is the difference between synchronous and asynchronous code? Name one way that JS handles asynchronous code.
+// Synchronous code executes in the order which it has been called, each line will only be reached once the one before it has finished execution.
+// Asynchronous code will allow the code that proceeds to execute without awaiting the completion of the execution of the asynchronous lines of code.
+// Javascript handles asynchronous code by utilising API calls to the web browser or C++ code in node.js environments.
+// Commonly used handlers are AJAX, setTimeout, setInterval, and fetch. They effectively place the asynchronous callback function in the
+// callback queue, the event loop in the browser or node environment then awaits an empty call stack and places the first callback from
+// the callback queue into the call stack for execution.
 
 // 18.
 
 // What is fetch and how does it relate to AJAX? Give an example of how you would use it. What does fetch return? Give a very basic example of fetch.
+// 'fetch' is an implementation of an asynchronous HTTP request API which returns a Promise object.
+// i.e. fetch('www.someapiendpoint.com/getJSONResponse').then(response => { response.json() }).then(jsonData => { console.log(jsonData) })
 
 // 19.
 
 // A JS object looks like this: const southernField = { location: “upper”, crop: “sorghum”, watered: false }. Use destructuring to store the value of watered in a variable.
+const southernField = {
+  location: "upper",
+  crop: "sorghum",
+  watered: false
+}
+
+const newVariable = southernField.watered
+console.log(newVariable);
 
 // 20.
 
 // a.
 // Uncomment the code below.
 
-// let newNum = 1
+let newNum = 1
 
-// const myFunc = (num, callback) => {
-//   newNum *= num
-//   callback(newNum)
-// }
+const myFunc = (num, callback) => {
+  newNum *= num
+  callback(newNum)
+}
 
-// myFunc(10, (sum) => {
-//   console.log(sum)
-// })
+myFunc(10, (sum) => {
+  console.log(sum)
+})
 
 // b.
-// Explain in your own words how this code works. For example you could start with something like:
-
-// "Firstly, the letNum variable is initialized and receives the value of the number 1. Secondly, the myFunc function is invoked. It received the arguments of..." 
+// Explain in your own words how this code works.
+// 1. a variable by the name of newNum is declared with a value of 1
+// 2. a function is then defined that takes a number and a callback function as arguments.
+// It multiplies the newNum variable by the number argument and stores the result in newNum.
+// It then calls the callback function on the newNum variable.
+// 3. myFunc is then called with the number 10 and an anonymous function as arguments.
+// The anonymous function takes one argument and logs that variable to the console.
+// The result of this code together is a method which multiplies a number (10 in this case) by 1 and prints the result in the console.
 
 // 21.
 
@@ -120,31 +234,56 @@
 
 // You could do something like this
 
-// 5.times do 
-  // code
+// 5.times do
+// code
 // end
 
 // Define a function times() that takes a number and a callback as an argument, the number represents how many times a loop should run, and the callback is the code that is executed each time the loop runs
+function times(num, callback) {
+  for(let index = 0; index < num; index++) {
+    callback();
+  }
+}
 
 // Double check the loop is actually running 5 times if you pass in 5 with a console.log in the callback
-
 // You should see 5 outputs
+times(5, () => {console.log("again!")})
 
-// 22. 
-
+// 22.
 // Define a Person class, the constructor should take name as an argument and set the name to the this, the class should have a prototype method sayHi() that simply outputs console.log("hello")
+class Person{
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Person.prototype.sayHi = () => {
+  console.log("hello");
+}
 
 // Implement another prototype method addAgeAndHeight() for your class that takes in age and height (in cms) as arguments (both number type) and adds these arguments as attributes to your person object
+Person.prototype.age = 0
+Person.prototype.height = 0
+
+Person.prototype.addAgeAndHeight = (age, height) => {
+  this._age = age;
+  this._height = height;
+}
 
 // Create a new person and pass in name as an argument, console.log the person object
+const phil = new Person("Phil");
+console.log(phil);
 
 // Call the sayHi() method on the person
+phil.sayHi();
 
 // Call the addAgeAndHeight() method passing in the relevant arguments
+phil.addAgeAndHeight(26, 175);
+console.log(phil.age);
 
 // console.log the updated person object showing all three attributes (name, age, height) as being a part of the person object
-
-// 23. 
+console.log(phil);
+// 23.
 
 // Define a function named waitBeforeSum that takes 2 numbers as arguments. Your function should sum these numbers together but only after waiting for 4 seconds inside of a setTimeout.
 
@@ -156,18 +295,18 @@
 
 // Add a try and catch block to your accessSum function, make it go into the catch when the sum is greater than 10, when you console.log the the error that you get as a parameter in the catch it should say 'the sum was greater than 10'
 
-// 24. 
+// 24.
 
-// a. 
+// a.
 // npm install node-fetch
 
-// b. 
+// b.
 // Using the following API endpoint access the Australian flag svg link and console.log it
 // => https://restcountries.eu/rest/v2/all
 
 // c.
-// Using the following API endpoint console.log the yoda text generated from this english phrase "Master Obiwan has lost a planet" 
-// Hint: you don't need to pay for a subscription 
+// Using the following API endpoint console.log the yoda text generated from this english phrase "Master Obiwan has lost a planet"
+// Hint: you don't need to pay for a subscription
 // => https://funtranslations.com/api/yoda
 
 // 🎉🎉🎉🎉🎉🎉
@@ -293,3 +432,5 @@ _.findLastIndex(users, {
 //     assert.equal(result, 2)
 //   })
 // });
+
+// Open a pull request and submit to Harrison's repo.
